@@ -7,7 +7,7 @@
 
 # Site Settings
 title                    : "Andrew Fasano"
-description              : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. "
+description              : "Research staff and PhD candidate focused on dynamic program analysis of embedded systems for vulnerability discovery"
 repository               : "AndrewFasano/andrewfasano.github.io"
 google_scholar_stats_use_cdn : true
 
@@ -23,9 +23,9 @@ baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.ba
 author:
   name             : "Andrew Fasano"
   avatar           : "images/android-chrome-512x512.png"
-  bio              : "Lorem ipsum College"
+  bio              : "MIT Lincoln Laboratory & Northeastern University"
   location         : "Boston, Massachusetts, USA"
-  employer         : "Massachusetts Insititue of Technology, Lincoln Laboratory"
+  employer         : "MIT, Lincoln Laboratory"
   pubmed           : 
   googlescholar    : "https://scholar.google.com/citations?user=Y9XVfSIAAAAJ"
   email            : "nation@state.actor"
