@@ -1,4 +1,4 @@
----
+Sok: Enabling security analyses of embedded systems via rehosting---
 permalink: /
 title: ""
 excerpt: ""
@@ -16,43 +16,68 @@ redirect_from:
 {% assign url = gsDataBaseUrl | append: "google-scholar-stats/gs_data_shieldsio.json" %}
 
 <span class='anchor' id='about-me'></span>
+I am a member of the Technical Staff at <a href="https://www.ll.mit.edu" target="_blank">MIT Lincoln Laboratory</a> and finishing a Computer Science PhD at <a href="https://www.khoury.northeastern.edu/" target="_blank">Northeastern University</a>. My research interests focus on the intersection of dynamic program analysis, firmware security, and vulnerability discovery. In particular, I am interested in <emph>rehosting</emph> firmware into virtual environments where it will run correctly while also being closely analyzed and monitored.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. Suspendisse condimentum, libero vel tempus mattis, risus risus vulputate libero, elementum fermentum mi neque vel nisl. Maecenas facilisis maximus dignissim. Curabitur mattis vulputate dui, tincidunt varius libero luctus eu. Mauris mauris nulla, scelerisque eget massa id, tincidunt congue felis. Sed convallis tempor ipsum rhoncus viverra. Pellentesque nulla orci, accumsan volutpat fringilla vitae, maximus sit amet tortor. Aliquam ultricies odio ut volutpat scelerisque. Donec nisl nisl, porttitor vitae pharetra quis, fringilla sed mi. Fusce pretium dolor ut aliquam consequat. Cras volutpat, tellus accumsan mattis molestie, nisl lacus tempus massa, nec malesuada tortor leo vel quam. Aliquam vel ex consectetur, vehicula leo nec, efficitur eros. Donec convallis non urna quis feugiat.
+Towards this end, I have contributed to the development of a number of open source tools, most notably <a href="https://panda.re" target="_blank">PANDA-re</a>, a whole-system dynamic analysis platform that can be used for dynamic analysis of traditional software systems or firmware. I've also developed courses focused on dynamic program analysis, whole system dynamic analysis, and firmware security which I've taught across the country and internationally at universities and companies.
 
-My research interest includes neural machine translation and computer vision. I have published more than 100 papers at the top international AI conferences with total <a href='https://scholar.google.com/citations?user=DhtAFkwAAAAJ'>google scholar citations <strong><span id='total_cit'>260000+</span></strong></a> (You can also use google scholar badge <a href='https://scholar.google.com/citations?user=DhtAFkwAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>).
+All my publications are available as open access, at <a href='https://scholar.google.com/citations?user=Y9XVfSIAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>. Training materials can be shared upon request, and I am always happy to discuss my research and teaching.
 
 
 # 🔥 News
-- *2022.02*: &nbsp;🎉🎉 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
-- *2022.02*: &nbsp;🎉🎉 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
+- *2022.11*: &nbsp; Ran my first international training course in Munich, Germany!
+- *2022.01*: &nbsp; Created and taught <emph>CS 4910</emph> &quot;Dynamic Program Analysis for System Security &quot; at Northeastern University
+- *2021.06*: &nbsp;🎉 Presented our paper <emph>PyPANDA: taming the pandamonium of whole system dynamic analysis</emph> at NDSS Binary Analysis Research (BAR) 2021
+- *2021.05*: &nbsp;🎉 Presented our SoK paper <emph>Enabling security analyses of embedded systems via rehosting</emph> at AsiaCCS 2021
+- *2020.03*: &nbsp; Completed graduate coursework and achieved PhD candidacy!
+- *2018.09*: &nbsp; Began PhD program at Northeastern University and joined the <a href="https://www.khoury.northeastern.edu/" target="_blank">Khory College of Computer Sciences</a>!
+- *2017.07*: &nbsp; Led the Lab RATs to a 10th place finish in <a href="https://www.defcon.org/html/links/dc-ctf.html" target="_blank">DEF CON CTF CTF finals</a>. <a href="https://news.mit.edu/2017/mit-team-lincoln-laboratory-scores-big-at-def-con-hacking-competition-0918" target="_blank">News coverage</a>
+- *2016.12*: &nbsp; Discovered 10 CVEs in a McAfee product. <a href="https://nation.state.actor">Technical write-up</a> and <a href="https://www.theregister.com/2016/12/13/boffin_dishes_10_mcafee_enterprise_bugs_for_chained_rce_root_death/" target="_blank">news coverage</a>
 
 # 📝 Publications 
 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2016</div><img src='images/500x300.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
-
 [Deep Residual Learning for Image Recognition](https://openaccess.thecvf.com/content_cvpr_2016/papers/He_Deep_Residual_Learning_CVPR_2016_paper.pdf)
-
 **Kaiming He**, Xiangyu Zhang, Shaoqing Ren, Jian Sun
 
 [**Project**](https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=DhtAFkwAAAAJ&citation_for_view=DhtAFkwAAAAJ:ALROH1vI_8AC) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
+- [Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet](https://github.com), A, B, C, **CVPR 2020**
 </div>
 </div>
 
-- [Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet](https://github.com), A, B, C, **CVPR 2020**
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">IEEE ICST 2023</div><img src='images/500x300.png' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+        [Homo in Machina: Improving Fuzz Testing Coverage via Compartment Analysis](about:blank)
+        Josh Bundt, **Andrew Fasano**, Brendan Dolan-Gavitt, William Robertson, Timothy Leek.
+</div>
+</div>
+
+
+
+NDSS BAR 2021 & PyPANDA: Taming the PANDAmonium of Whole System Dynamic Analysis & 
+Luke Craig, **Andrew Fasano**,  Tiemoko Ballo, Timothy Leek, Brendan Dolan-Gavitt, William Robertson
+
+ACM AsiaCCS 2021 & Evaluating Synthetic Bugs &
+Josh Bundt, **Andrew Fasano**, Brendan Dolan-Gavitt, William Robertson, Timothy Leek
+
+
+ACM AsiaCCS 2021 & SoK: Enabling Security Analyses of Embedded Systems via Rehosting & 
+**Andrew Fasano**, Tiemoko Ballo, Marius Muench, Tim Leek, Alexander Bulekov, Brendan Dolan-Gavitt, Manuel Egele, Aur\'elien Francillon, Long Lu, Nick Gregory, Davide Balzarotti, William Robertson
+
+The Rode0day to Less Buggy Programs
 
 # 🎖 Honors and Awards
-- *2021.10* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
-- *2021.09* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
+- *2019.09* **MIT Lincoln Scholar Award**: Provided with full funding and salary to pursue PhD while maintaining employment at MIT Lincoln Laboratory.
+- *2017.06* **MITLL Team Award**: Awarded to my team for outstanding technical work at MIT Lincoln Laboratory.
 
 # 📖 Educations
-- *2019.06 - 2022.04 (now)*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
-- *2015.09 - 2019.06*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
+- *2018.09 - 2023.11 (planned)*, PhD in Computer Science at Northeastern University, Boston, MA, USA.
+- *2015.09 - 2028.05*, Part time Computer Science graduate coursework at Massachusetts Institute of Technology, Cambridge, MA, USA.
+- *2010.09 - 2014.06*, Bachelors in Computer Science at Rensselaer Polytechnic Institute, Troy, NY, USA.
 
 # 💬 Invited Talks
-- *2021.06*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
-- *2021.03*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet.  \| [\[video\]](https://github.com/)
-
-# 💻 Internships
-- *2019.05 - 2020.02*, [Lorem](https://github.com/), China.
+- *2019.10*, **AvengerCon**: "The LAVA has Hardened! Building a Better Bug Corpora to Evaluate Bug-Finders"
+- *2019.08*, **USENIX WOOT** "Rode0day: A Year of Bug-Finding Evaluations"
+- *2018.08*, **USENIX WOOT** "Rode0day: Searching for Truth with a Bug-Finding Competition"
+- *2018.10*, **MIT Techsec** "Intro to Web Security"
