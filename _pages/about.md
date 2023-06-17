@@ -46,27 +46,6 @@ All my publications are available as open access, at <a href='https://scholar.go
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">IEEE ICST 2023</div><img src='images/500x300.png' alt="sym" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-        [Homo in Machina: Improving Fuzz Testing Coverage via Compartment Analysis](about:blank)
-        Josh Bundt, **Andrew Fasano**, Brendan Dolan-Gavitt, William Robertson, Timothy Leek.
-</div>
-</div>
-
-
-
-NDSS BAR 2021 & PyPANDA: Taming the PANDAmonium of Whole System Dynamic Analysis & 
-Luke Craig, **Andrew Fasano**,  Tiemoko Ballo, Timothy Leek, Brendan Dolan-Gavitt, William Robertson
-
-ACM AsiaCCS 2021 & Evaluating Synthetic Bugs &
-Josh Bundt, **Andrew Fasano**, Brendan Dolan-Gavitt, William Robertson, Timothy Leek
-
-
-ACM AsiaCCS 2021 & SoK: Enabling Security Analyses of Embedded Systems via Rehosting & 
-**Andrew Fasano**, Tiemoko Ballo, Marius Muench, Tim Leek, Alexander Bulekov, Brendan Dolan-Gavitt, Manuel Egele, Aur\'elien Francillon, Long Lu, Nick Gregory, Davide Balzarotti, William Robertson
-
-The Rode0day to Less Buggy Programs
-
 # 🎖 Honors and Awards
 - *2019.09* **MIT Lincoln Scholar Award**: Provided with full funding and salary to pursue PhD while maintaining employment at MIT Lincoln Laboratory.
 - *2017.06* **MITLL Team Award**: Awarded to my team for outstanding technical work at MIT Lincoln Laboratory.
