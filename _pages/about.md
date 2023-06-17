@@ -29,7 +29,7 @@ All my publications are available as open access, at <a href='https://scholar.go
 - *2021.06*: &nbsp;🎉 Presented our paper <emph>PyPANDA: taming the pandamonium of whole system dynamic analysis</emph> at NDSS Binary Analysis Research (BAR) 2021
 - *2021.05*: &nbsp;🎉 Presented our SoK paper <emph>Enabling security analyses of embedded systems via rehosting</emph> at AsiaCCS 2021
 - *2020.03*: &nbsp; Completed graduate coursework and achieved PhD candidacy!
-- *2018.09*: &nbsp; Began PhD program at Northeastern University and joined the <a href="https://www.khoury.northeastern.edu/" target="_blank">Khory College of Computer Sciences</a>!
+- *2018.09*: &nbsp; Began PhD program at Northeastern University and joined the <a href="https://www.khoury.northeastern.edu/" target="_blank">Khoury College of Computer Sciences</a>!
 - *2017.07*: &nbsp; Led the Lab RATs to a 10th place finish in <a href="https://www.defcon.org/html/links/dc-ctf.html" target="_blank">DEF CON CTF CTF finals</a>. <a href="https://news.mit.edu/2017/mit-team-lincoln-laboratory-scores-big-at-def-con-hacking-competition-0918" target="_blank">News coverage</a>
 - *2016.12*: &nbsp; Discovered 10 CVEs in a McAfee product. <a href="https://nation.state.actor">Technical write-up</a> and <a href="https://www.theregister.com/2016/12/13/boffin_dishes_10_mcafee_enterprise_bugs_for_chained_rce_root_death/" target="_blank">news coverage</a>
 
@@ -42,17 +42,28 @@ All my publications are available as open access, at <a href='https://scholar.go
 
 [**Project**](https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=DhtAFkwAAAAJ&citation_for_view=DhtAFkwAAAAJ:ALROH1vI_8AC) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
-- [Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet](https://github.com), A, B, C, **CVPR 2020**
 </div>
 </div>
+
+- [Homo in Machina: Improving Fuzz Testing Coverage via Compartment Analysis](http://example.com) Josh Bundt, **Andrew Fasano**, Brendan Dolan-Gavitt, William Robertson, Timothy Leek. **ACM AsiaCCS 2021**
+
+- [PyPANDA: Taming the PANDAmonium of Whole System Dynamic Analysis](http://example.com) Luke Craig, **Andrew Fasano**,  Tiemoko Ballo, Timothy Leek, Brendan Dolan-Gavitt, William Robertson. **NDSS BAR 2021**
+
+- [Evaluating Synthetic bugs](http://example.com) Josh Bundt, **Andrew Fasano**, Brendan Dolan-Gavitt, William Robertson, Timothy Leek. **ACM AsiaCCS 2021.**
+
+- [SoK: Enabling Security Analyses of Embedded Systems via Rehosting](http://example.com)
+**Andrew Fasano**, Tiemoko Ballo, Marius Muench, Tim Leek, Alexander Bulekov, Brendan Dolan-Gavitt, Manuel Egele, Aurelien Francillon, Long Lu, Nick Gregory, Davide Balzarotti, William Robertson. **ACM AsisaCCS 2021.**
+
+- [The Rode0day to Less Buggy Programs](http://example.com) **Andrew Fasano**, Tim Leek, Brendan Dolan-Gavitt, Josh Bundt. **IEEE Security and Privacy Magazine 2019.**
+
 
 # 🎖 Honors and Awards
-- *2019.09* **MIT Lincoln Scholar Award**: Provided with full funding and salary to pursue PhD while maintaining employment at MIT Lincoln Laboratory.
-- *2017.06* **MITLL Team Award**: Awarded to my team for outstanding technical work at MIT Lincoln Laboratory.
+- *2019.09* **MIT Lincoln Scholar Award**: Provided with full funding and salary to pursue my PhD full time while maintaining employment at MIT Lincoln Laboratory.
+- *2017.06* **MIT LL Team Award**: Awarded to my team for outstanding technical work.
 
 # 📖 Educations
-- *2018.09 - 2023.11 (planned)*, PhD in Computer Science at Northeastern University, Boston, MA, USA.
-- *2015.09 - 2028.05*, Part time Computer Science graduate coursework at Massachusetts Institute of Technology, Cambridge, MA, USA.
+- *2018.09 - 2023.11 (anticipated)*, PhD in Computer Science at Northeastern University, Boston, MA, USA.
+- *2015.09 - 2018.05*, Part time Computer Science graduate coursework at Massachusetts Institute of Technology, Cambridge, MA, USA.
 - *2010.09 - 2014.06*, Bachelors in Computer Science at Rensselaer Polytechnic Institute, Troy, NY, USA.
 
 # 💬 Invited Talks
