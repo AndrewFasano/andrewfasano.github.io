@@ -22,10 +22,10 @@ baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.ba
 # Site Author
 author:
   name             : "Andrew Fasano"
-  avatar           : "images/android-chrome-512x512.png"
+  avatar           : "images/me.jpg"
   bio              : "MIT Lincoln Laboratory and Northeastern University"
   location         : "Boston, Massachusetts, USA"
-  employer         : "MIT, Lincoln Laboratory"
+  employer         : "MIT Lincoln Laboratory"
   pubmed           : 
   googlescholar    : "https://scholar.google.com/citations?user=Y9XVfSIAAAAJ"
   email            : "nation@state.actor"
@@ -51,7 +51,7 @@ author:
   stackoverflow    : # http://stackoverflow.com/users/123456/username
   steam            :
   tumblr           :
-  twitter          : 
+  twitter          :  "andrewfasano"
   vine             :
   weibo            :
   xing             :
