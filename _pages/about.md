@@ -16,11 +16,12 @@ redirect_from:
 {% assign url = gsDataBaseUrl | append: "google-scholar-stats/gs_data_shieldsio.json" %}
 
 <span class='anchor' id='about-me'></span>
-I am a member of the Technical Staff at MIT Lincoln Laboratory in the [Cyber System Assessments Group](https://www.ll.mit.edu/r-d/cyber-security-and-information-sciences/cyber-system-assessments) while also finshing my Computer Science PhD at <a href="https://www.khoury.northeastern.edu/" target="_blank">Northeastern University</a>. My research interests focus on the intersection of dynamic program analysis, firmware security, and vulnerability discovery. In particular, I am interested in **rehosting** firmware into virtual environments where it will run correctly while also being closely analyzed and monitored. Towards this end, I have contributed to the development of a number of open source tools, most notably <a href="https://panda.re" target="_blank">PANDA-re</a>, a whole-system dynamic analysis platform that can be used for dynamic analysis of both traditional software systems and firmware. I've also developed courses focused on dynamic program analysis, whole system dynamic analysis, and firmware security which I've taught at various universities and companies both in the US and abroad.
+I am a member of the Technical Staff at MIT Lincoln Laboratory in the [Cyber System Assessments Group](https://www.ll.mit.edu/r-d/cyber-security-and-information-sciences/cyber-system-assessments) where I research the intersection of dynamic program analysis, firmware security, and vulnerability discovery. In particular, I am interested in **rehosting** firmware into virtual environments where it will run correctly while also being closely analyzed and monitored. Towards this end, I have contributed to the development of a number of open source tools, most notably <a href="https://panda.re" target="_blank">PANDA-re</a>, a whole-system dynamic analysis platform that can be used for dynamic analysis of both traditional software systems and firmware. I've also developed courses focused on dynamic program analysis, whole system dynamic analysis, and firmware security which I've taught at various universities and companies both in the US and abroad. I am a proud alumnus of Northeastern University, where I earned my PhD in Computer Science, and Rensselaer Polytechnic Institute, where my BS in Computer Science and involvement in RPISEC honed my expertise in cybersecurity.
 
 All my publications are available as open access, at <a href='https://scholar.google.com/citations?user=Y9XVfSIAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>. Training materials can be shared upon request, and I am always happy to discuss my research and teaching.
 
 # 🔥 News
+- *2024.03*: Successfully defended my PhD thesis &quot;Dynamic Program Analysis of Embedded Systems&quot;
 - *2022.11*: Ran my first international training course in Munich, Germany!
 - *2022.01*: Created and taught <emph>CS 4910</emph> &quot;Dynamic Program Analysis for System Security &quot; at Northeastern University
 - *2021.06*: Presented our paper <emph>PyPANDA: taming the PANDAmonium of whole system dynamic analysis</emph> at NDSS BAR 2021
@@ -50,7 +51,7 @@ All my publications are available as open access, at <a href='https://scholar.go
 - *2017.06* **MIT Lincoln Laboratory Team Award**: One of my projects was award a Team Award for outstanding technical achievement.
 
 # 📖 Education
-- *2018.09 - 2023.12 (anticipated)*, PhD in Computer Science at Northeastern University, Boston, MA, USA.
+- *2018.09 - 2024.03**, PhD in Computer Science at Northeastern University, Boston, MA, USA.
 - *2015.09 - 2018.05*, Part time Computer Science graduate coursework at Massachusetts Institute of Technology, Cambridge, MA, USA.
 - *2010.09 - 2014.06*, Bachelors in Computer Science at Rensselaer Polytechnic Institute, Troy, NY, USA.
 
