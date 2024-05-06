@@ -51,7 +51,7 @@ All my publications are available as open access, at <a href='https://scholar.go
 - *2017.06* **MIT Lincoln Laboratory Team Award**: One of my projects was award a Team Award for outstanding technical achievement.
 
 # 📖 Education
-- *2018.09 - 2024.03**, PhD in Computer Science at Northeastern University, Boston, MA, USA.
+- *2018.09 - 2024.03*, PhD in Computer Science at Northeastern University, Boston, MA, USA.
 - *2015.09 - 2018.05*, Part time Computer Science graduate coursework at Massachusetts Institute of Technology, Cambridge, MA, USA.
 - *2010.09 - 2014.06*, Bachelors in Computer Science at Rensselaer Polytechnic Institute, Troy, NY, USA.
 
