@@ -29,9 +29,9 @@ All my publications are available as open access, at <a href='https://scholar.go
 - *2016.12*: Discovered 10 CVEs in a McAfee product. <a href="https://nation.state.actor">Technical write-up</a> and <a href="https://www.theregister.com/2016/12/13/boffin_dishes_10_mcafee_enterprise_bugs_for_chained_rce_root_death/" target="_blank">news coverage</a>
 
 # 🧑‍💻 Open Source Projects
-- **PANDA.re**: A whole-system dynamic analysis platform for reverse engineering and software understanding. (GitHub Repository)[https://github.com/panda-re/panda] | (Project Website)[https://panda.re]
-- **LAVA**: An automated framework for injecting vulnerabilities into software to evaluate bug-finding systems. (GitHub Repository)[https://github.com/panda-re/lava] (No longer maintained)
-- **Rode0day**: A vulnerability discovery competition powered by LAVA where users compete to find new bugs each month. (Project website)[https://rode0day.mit.edu] (No longer maintained)
+- **PANDA.re**: A whole-system dynamic analysis platform for reverse engineering and software understanding. [GitHub Repository](https://github.com/panda-re/panda) & [Project Website](https://panda.re)
+- **LAVA**: An automated framework for injecting vulnerabilities into software to evaluate bug-finding systems. [GitHub Repository](https://github.com/panda-re/lava) (No longer maintained)
+- **Rode0day**: A vulnerability discovery competition powered by LAVA where users compete to find new bugs each month. [Project website](https://rode0day.mit.edu) (No longer maintained)
 - **Firmware Rehosting**: _New tools for automated firmware rehosting to be released late 2024_
 
 # 📝 Academic Publications 
