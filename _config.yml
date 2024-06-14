@@ -6,7 +6,7 @@
 # `jekyll serve`. If you change this file, please restart the server process.
 
 # Site Settings
-title                    : "Andrew Fasano, PhD"
+title                    : "Andrew Fasano"
 description              : "Cybsersecurity researcher focused on dynamic program analysis of embedded systems for vulnerability discovery"
 repository               : "AndrewFasano/andrewfasano.github.io"
 google_scholar_stats_use_cdn : true
@@ -21,11 +21,11 @@ baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.ba
 
 # Site Author
 author:
-  name             : "Andrew Fasano"
+  name             : "DR. Andrew Fasano"
   avatar           : "images/af.jpg"
-  bio              : "MIT Lincoln Laboratory"
+  bio              : "Masachusetts Institute of Technology <br /> Lincoln Laboratory"
   location         : "Boston, Massachusetts, USA"
-  employer         : "MIT Lincoln Laboratory"
+  employer         : "Traveling the US by folding bycicle and train"
   pubmed           : 
   googlescholar    : "https://scholar.google.com/citations?user=Y9XVfSIAAAAJ"
   email            : "nation@state.actor"
