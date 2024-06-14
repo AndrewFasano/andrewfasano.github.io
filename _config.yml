@@ -21,11 +21,11 @@ baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.ba
 
 # Site Author
 author:
-  name             : "DR. Andrew Fasano"
+  name             : "Dr. Andrew Fasano"
   avatar           : "images/af.jpg"
-  bio              : "Masachusetts Institute of Technology <br /> Lincoln Laboratory"
-  location         : "Boston, Massachusetts, USA"
-  employer         : "Traveling the US by folding bycicle and train"
+  bio              : "Masachusetts Institute of Technology - Lincoln Laboratory"
+  location         : "Traveling the US by folding bike"
+  employer         :
   pubmed           : 
   googlescholar    : "https://scholar.google.com/citations?user=Y9XVfSIAAAAJ"
   email            : "nation@state.actor"
