@@ -6,17 +6,17 @@ main:
   - title: "News"
     url: "/#-news"
 
+  - title: "Projects"
+    url: "/#-open-source-projects"
+
   - title: "Publications"
-    url: "/#-publications"
-
-  - title: "Honors and Awards"
-    url: "/#-honors-and-awards"
-
-  - title: "Education"
-    url: "/#-educations"
+    url: "/#-academic-publications"
 
   - title: "Invited Talks"
     url: "/#-invited-talks"
 
   - title: "Blog"
     url: "https://nation.state.actor"
+
+  - title: "Honors and Awards"
+    url: "/#-honors-and-awards"
