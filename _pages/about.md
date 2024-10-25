@@ -32,23 +32,25 @@ All my publications are available as open access, at <a href='https://scholar.go
 - **PANDA.re**: A whole-system dynamic analysis platform for reverse engineering and software understanding. Fork of the QEMU codebase with significant modifications to enable record/replay, a plugin architecture, and Python based analyses. [GitHub Repository](https://github.com/panda-re/panda). [Project Website](https://panda.re)
 - **LAVA**: An automated framework for injecting vulnerabilities into software to evaluate bug-finding systems. LAVA uses PANDA's whole-system dynamic taint analysis to identify how input data flow through a program and uses this information to propose and evaluate patches to soruce code to add vulnerabilities. [GitHub Repository](https://github.com/panda-re/lava) (No longer maintained)
 - **Rode0day**: A vulnerability discovery competition powered by LAVA where users compete to find new bugs each month. Unlike prior self-evaluations, Rode0day competitiors had no knowledge of where the bugs were until we released the solutions after each competition ended. [Project website](https://rode0day.mit.edu) (No longer maintained)
-- **System Call Injection**: _New tools for dynamic analysis of virtualized guest systems using system call injection to be released Summer 2024_
+- **System Call Injection with HyDE**: _New tools for dynamic analysis of virtualized guest systems using system call injection to be released with ACSAC 2024 publication_
 - **Firmware Rehosting**: _New tools for automated firmware rehosting and dynamic analysis of firmware to be released late 2024_
 
 # 📝 Academic Publications 
+- Hypervisor Dissociative Execution: Programming Guests for Monitoring, Management, and Security. **Andrew Fasano**, Zak Estrada, Timothy LeekWilliam Robertson. **ACSAC 2024**. (Preprint coming soon).
 
-- [Homo in Machina: Improving Fuzz Testing Coverage via Compartment Analysis](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Y9XVfSIAAAAJ&citation_for_view=Y9XVfSIAAAAJ:YsMSGLbcyi4C) Josh Bundt, **Andrew Fasano**, Brendan Dolan-Gavitt, William Robertson, Timothy Leek. **ACM AsiaCCS 2021**. [View pdf](https://arxiv.org/pdf/2212.11162.pdf)
+- [Homo in Machina: Improving Fuzz Testing Coverage via Compartment Analysis](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Y9XVfSIAAAAJ&citation_for_view=Y9XVfSIAAAAJ:YsMSGLbcyi4C). Josh Bundt, **Andrew Fasano**, Brendan Dolan-Gavitt, William Robertson, Timothy Leek. **ACM AsiaCCS 2021**. [View pdf](https://arxiv.org/pdf/2212.11162.pdf)
 
-- [PyPANDA: Taming the PANDAmonium of Whole System Dynamic Analysis](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Y9XVfSIAAAAJ&citation_for_view=Y9XVfSIAAAAJ:zYLM7Y9cAGgC) Luke Craig, **Andrew Fasano**,  Tiemoko Ballo, Timothy Leek, Brendan Dolan-Gavitt, William Robertson. **NDSS BAR 2021**. [View pdf](https://www.ndss-symposium.org/wp-content/uploads/bar2021_23001_paper.pdf) 
+- [PyPANDA: Taming the PANDAmonium of Whole System Dynamic Analysis](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Y9XVfSIAAAAJ&citation_for_view=Y9XVfSIAAAAJ:zYLM7Y9cAGgC). Luke Craig, **Andrew Fasano**,  Tiemoko Ballo, Timothy Leek, Brendan Dolan-Gavitt, William Robertson. **NDSS BAR 2021**. [View pdf](https://www.ndss-symposium.org/wp-content/uploads/bar2021_23001_paper.pdf)
 
-- [Evaluating Synthetic bugs](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Y9XVfSIAAAAJ&citation_for_view=Y9XVfSIAAAAJ:Tyk-4Ss8FVUC) Josh Bundt, **Andrew Fasano**, Brendan Dolan-Gavitt, William Robertson, Timothy Leek. **ACM AsiaCCS 2021**. [View pdf](https://dl.acm.org/doi/pdf/10.1145/3433210.3453096)
+- [Evaluating Synthetic bugs](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Y9XVfSIAAAAJ&citation_for_view=Y9XVfSIAAAAJ:Tyk-4Ss8FVUC). Josh Bundt, **Andrew Fasano**, Brendan Dolan-Gavitt, William Robertson, Timothy Leek. **ACM AsiaCCS 2021**. [View pdf](https://dl.acm.org/doi/pdf/10.1145/3433210.3453096)
 
-- [SoK: Enabling Security Analyses of Embedded Systems via Rehosting](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Y9XVfSIAAAAJ&citation_for_view=Y9XVfSIAAAAJ:IjCSPb-OGe4C)
+- [SoK: Enabling Security Analyses of Embedded Systems via Rehosting](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Y9XVfSIAAAAJ&citation_for_view=Y9XVfSIAAAAJ:IjCSPb-OGe4C).
 **Andrew Fasano**, Tiemoko Ballo, Marius Muench, Tim Leek, Alexander Bulekov, Brendan Dolan-Gavitt, Manuel Egele, Aurelien Francillon, Long Lu, Nick Gregory, Davide Balzarotti, William Robertson. **ACM AsisaCCS 2021**. [View pdf](https://dspace.mit.edu/handle/1721.1/130505)
 
-- [The Rode0day to Less Buggy Programs](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Y9XVfSIAAAAJ&citation_for_view=Y9XVfSIAAAAJ:2osOgNQ5qMEC) **Andrew Fasano**, Tim Leek, Brendan Dolan-Gavitt, Josh Bundt. **IEEE Security and Privacy Magazine 2019**. [View pdf](https://messlab.moyix.net/papers/rode0day_spmag19.pdf)
+- [The Rode0day to Less Buggy Programs](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Y9XVfSIAAAAJ&citation_for_view=Y9XVfSIAAAAJ:2osOgNQ5qMEC). **Andrew Fasano**, Tim Leek, Brendan Dolan-Gavitt, Josh Bundt. **IEEE Security and Privacy Magazine 2019**. [View pdf](https://messlab.moyix.net/papers/rode0day_spmag19.pdf)
 
 # 💬 Invited Talks
+- *2024.08*, **DEFCON AIxCC**: "A Reverse Engineer’s Guide to Mechanistic Interpretability" [Video](https://vimeo.com/997479806) and [slides](https://nation.state.actor/2024/08/21/defcon.html).
 - *2019.10*, **AvengerCon**: "The LAVA has Hardened! Building a Better Bug Corpora to Evaluate Bug-Finders"
 - *2019.08*, **USENIX WOOT** "Rode0day: A Year of Bug-Finding Evaluations"
 - *2018.08*, **USENIX WOOT** "Rode0day: Searching for Truth with a Bug-Finding Competition"
