@@ -21,22 +21,23 @@ I am a member of the Technical Staff at MIT Lincoln Laboratory in the [Cyber Sys
 All my publications are available as open access, at <a href='https://scholar.google.com/citations?user=Y9XVfSIAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>. Training materials can be shared upon request, and I am always happy to discuss my research and teaching.
 
 # 🔥 News
-- *2022.11*: Ran my first international training course in Munich, Germany!
+- *2024.08*: Spoke at DEF CON for the first time
+- *2022.11*: Ran my first international training course in Munich, Germany
 - *2022.01*: Created and taught <emph>CS 4910</emph> &quot;Dynamic Program Analysis for System Security &quot; at Northeastern University
 - *2021.06*: Presented our paper <emph>PyPANDA: taming the PANDAmonium of whole system dynamic analysis</emph> at NDSS BAR 2021
 - *2021.05*: Presented our SoK paper <emph>Enabling security analyses of embedded systems via rehosting</emph> at AsiaCCS 2021
 - *2017.07*: Led the Lab RATs to a 10th place finish in <a href="https://www.defcon.org/html/links/dc-ctf.html" target="_blank">DEF CON CTF CTF finals</a>. <a href="https://news.mit.edu/2017/mit-team-lincoln-laboratory-scores-big-at-def-con-hacking-competition-0918" target="_blank">News coverage</a>
-- *2016.12*: Discovered 10 CVEs in a McAfee product. <a href="https://nation.state.actor">Technical write-up</a> and <a href="https://www.theregister.com/2016/12/13/boffin_dishes_10_mcafee_enterprise_bugs_for_chained_rce_root_death/" target="_blank">news coverage</a>
+- *2016.12*: Discovered <a href="https://nation.state.actor">10 CVEs in a McAfee antivirus product</a>. <a href="https://www.theregister.com/2016/12/13/boffin_dishes_10_mcafee_enterprise_bugs_for_chained_rce_root_death/" target="_blank">News coverage</a>
 
 # 🧑‍💻 Open Source Projects
+- **System Call Injection with HyDE**: _New tools for dynamic analysis of virtualized guest systems using system call injection to be released with ACSAC 2024 publication_
 - **PANDA.re**: A whole-system dynamic analysis platform for reverse engineering and software understanding. Fork of the QEMU codebase with significant modifications to enable record/replay, a plugin architecture, and Python based analyses. [GitHub Repository](https://github.com/panda-re/panda). [Project Website](https://panda.re)
 - **LAVA**: An automated framework for injecting vulnerabilities into software to evaluate bug-finding systems. LAVA uses PANDA's whole-system dynamic taint analysis to identify how input data flow through a program and uses this information to propose and evaluate patches to soruce code to add vulnerabilities. [GitHub Repository](https://github.com/panda-re/lava) (No longer maintained)
 - **Rode0day**: A vulnerability discovery competition powered by LAVA where users compete to find new bugs each month. Unlike prior self-evaluations, Rode0day competitiors had no knowledge of where the bugs were until we released the solutions after each competition ended. [Project website](https://rode0day.mit.edu) (No longer maintained)
-- **System Call Injection with HyDE**: _New tools for dynamic analysis of virtualized guest systems using system call injection to be released with ACSAC 2024 publication_
 - **Firmware Rehosting**: _New tools for automated firmware rehosting and dynamic analysis of firmware to be released late 2024_
 
 # 📝 Academic Publications 
-- Hypervisor Dissociative Execution: Programming Guests for Monitoring, Management, and Security. **Andrew Fasano**, Zak Estrada, Timothy LeekWilliam Robertson. **ACSAC 2024**. (Preprint coming soon).
+- Hypervisor Dissociative Execution: Programming Guests for Monitoring, Management, and Security. **Andrew Fasano**, Zak Estrada, Timothy Leek, William Robertson. **ACSAC 2024**. (Preprint coming soon).
 
 - [Homo in Machina: Improving Fuzz Testing Coverage via Compartment Analysis](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Y9XVfSIAAAAJ&citation_for_view=Y9XVfSIAAAAJ:YsMSGLbcyi4C). Josh Bundt, **Andrew Fasano**, Brendan Dolan-Gavitt, William Robertson, Timothy Leek. **ACM AsiaCCS 2021**. [View pdf](https://arxiv.org/pdf/2212.11162.pdf)
 
@@ -51,10 +52,11 @@ All my publications are available as open access, at <a href='https://scholar.go
 
 # 💬 Invited Talks
 - *2024.08*, **DEFCON AIxCC**: "A Reverse Engineer’s Guide to Mechanistic Interpretability" [Video](https://vimeo.com/997479806) and [slides](https://nation.state.actor/2024/08/21/defcon.html).
+- *2023.10*, **NYU Hack Night**: "The Trials, Tribulations, and Triumphs of Whole System Dynamic Analysis: Lessons from a Decade in the Trenches"
 - *2019.10*, **AvengerCon**: "The LAVA has Hardened! Building a Better Bug Corpora to Evaluate Bug-Finders"
-- *2019.08*, **USENIX WOOT** "Rode0day: A Year of Bug-Finding Evaluations"
-- *2018.08*, **USENIX WOOT** "Rode0day: Searching for Truth with a Bug-Finding Competition"
-- *2018.10*, **MIT Techsec** "Intro to Web Security"
+- *2019.08*, **USENIX WOOT**: "Rode0day: A Year of Bug-Finding Evaluations"
+- *2018.08*, **USENIX WOOT**: "Rode0day: Searching for Truth with a Bug-Finding Competition"
+- *2018.10*, **MIT Techsec**: "Intro to Web Exploitation"
 
 # 🎖 Honors and Awards
 - *2020.09* **R&D100 Award**: LAVA was [awarded an R&D100 award](https://www.rdworldonline.com/rd-100-2020-winner/lava-large-scale-vulnerability-addition/) for its impact advancing the state of the art in vulnerability discovery.
