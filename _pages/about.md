@@ -23,13 +23,13 @@ Previously, I spent a decade at MIT Lincoln Laboratory in the [Cyber System Asse
 
 I earned my PhD in Computer Science from Northeastern University and BS from Rensselaer Polytechnic Institute, where I was an active member of RPISEC. I'm passionate about cybersecurity education and have developed courses for universities, government agencies, and private companies. The materials from my System Security with Dynamic Program Analysis course are <a href="https://github.com/andrewFasano/dpa" target="_blank">publicly available</a>.
 
-All my publications are available as open access, on <a href='https://scholar.google.com/citations?user=Y9XVfSIAAAAJ'>google scholar</a>.
+All my publications are available as open access on <a href='https://scholar.google.com/citations?user=Y9XVfSIAAAAJ'>Google Scholar</a>.
 
 
 # 🔥 News
 - *2024.11*: Joined the US AI Safety Institute as a senior advisor focused on cybersecurity
 - *2024.08*: Gave a DEF CON talk about reverse engineering LLMs
-- *2022.11*: Ran my first international training course in Munich, Germany
+- *2022.11*: Ran my first international training course in Munich, Germany focused on firmware security
 - *2022.01*: Created and taught <emph>CS 4910</emph> &quot;Dynamic Program Analysis for System Security &quot; at Northeastern University
 - *2021.05*: Presented our SoK paper <emph>Enabling security analyses of embedded systems via rehosting</emph> at AsiaCCS 2021
 - *2017.07*: Led the Lab RATs to a 10th place finish in <a href="https://www.defcon.org/html/links/dc-ctf.html" target="_blank">DEF CON CTF CTF finals</a>. <a href="https://news.mit.edu/2017/mit-team-lincoln-laboratory-scores-big-at-def-con-hacking-competition-0918" target="_blank">News coverage</a>
