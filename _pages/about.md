@@ -23,7 +23,7 @@ Previously, I spent a decade at MIT Lincoln Laboratory in the [Cyber System Asse
 
 I earned my PhD in Computer Science from Northeastern University and BS from Rensselaer Polytechnic Institute, where I was an active member of RPISEC. I'm passionate about cybersecurity education and have developed courses for universities, government agencies, and private companies. The materials from my System Security with Dynamic Program Analysis course are <a href="https://github.com/andrewFasano/dpa" target="_blank">publicly available</a>.
 
-All my publications are available as open access, at <a href='https://scholar.google.com/citations?user=Y9XVfSIAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>.
+All my publications are available as open access, on <a href='https://scholar.google.com/citations?user=Y9XVfSIAAAAJ'>google scholar</a>.
 
 
 # 🔥 News
