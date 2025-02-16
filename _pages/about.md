@@ -16,16 +16,21 @@ redirect_from:
 {% assign url = gsDataBaseUrl | append: "google-scholar-stats/gs_data_shieldsio.json" %}
 
 <span class='anchor' id='about-me'></span>
-I am a member of the Technical Staff at MIT Lincoln Laboratory in the [Cyber System Assessments Group](https://www.ll.mit.edu/r-d/cyber-security-and-information-sciences/cyber-system-assessments) where I research the intersection of dynamic program analysis, firmware security, and vulnerability discovery. In particular, I am interested in **rehosting** firmware into virtual environments where it will run correctly while also being closely analyzed and monitored. Towards this end, I have contributed to the development of a number of open source tools. I've also developed courses focused on dynamic program analysis, whole system dynamic analysis, and firmware security which I've taught at various universities and companies both in the US and abroad. I am a proud alumnus of Northeastern University, where I earned my PhD in Computer Science, and Rensselaer Polytechnic Institute, where I earned a BS in Computer Science and was an active member of RPISEC.
 
-All my publications are available as open access, at <a href='https://scholar.google.com/citations?user=Y9XVfSIAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>. Training materials can be shared upon request, and I am always happy to discuss my research and teaching.
+I am a senior cybersecurity researcher focused on the cyber capabilities of AI systems. At the US AI Safety Institute (AISI), I leverage my background in cyber capability evaluation to assess current and next-generation AI models, studying the relationship between the capability frontier and potential cyber harms while advancing the science of AI security evaluations.
+
+Previously, I spent a decade at MIT Lincoln Laboratory in the [Cyber System Assessments Group](https://www.ll.mit.edu/r-d/cyber-security-and-information-sciences/cyber-system-assessments) where I led a research team focused on the intersection of dynamic program analysis, firmware security, and vulnerability discovery. In this role, I helped define the field of _firmware rehosting_ while building open-source tools and applying them to analyze critical systems' security. This work in systems security evaluation and testing methodology now informs my approach to understanding AI systems' capabilities and security implications.
+
+I earned my PhD in Computer Science from Northeastern University and BS from Rensselaer Polytechnic Institute, where I was an active member of RPISEC. I'm passionate about cybersecurity education and have developed courses for universities, government agencies, and private companies. The materials from my System Security with Dynamic Program Analysis course are <a href="https://github.com/andrewFasano/dpa" target="_blank">publicly available</a>.
+
+All my publications are available as open access, at <a href='https://scholar.google.com/citations?user=Y9XVfSIAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>.
+
 
 # 🔥 News
 - *2024.11*: Joined the US AI Safety Institute as a senior advisor focused on cybersecurity
-- *2024.08*: Spoke at DEF CON for the first time
+- *2024.08*: Gave a DEF CON talk about reverse engineering LLMs
 - *2022.11*: Ran my first international training course in Munich, Germany
 - *2022.01*: Created and taught <emph>CS 4910</emph> &quot;Dynamic Program Analysis for System Security &quot; at Northeastern University
-- *2021.06*: Presented our paper <emph>PyPANDA: taming the PANDAmonium of whole system dynamic analysis</emph> at NDSS BAR 2021
 - *2021.05*: Presented our SoK paper <emph>Enabling security analyses of embedded systems via rehosting</emph> at AsiaCCS 2021
 - *2017.07*: Led the Lab RATs to a 10th place finish in <a href="https://www.defcon.org/html/links/dc-ctf.html" target="_blank">DEF CON CTF CTF finals</a>. <a href="https://news.mit.edu/2017/mit-team-lincoln-laboratory-scores-big-at-def-con-hacking-competition-0918" target="_blank">News coverage</a>
 - *2016.12*: Discovered <a href="https://nation.state.actor">10 CVEs in a McAfee antivirus product</a>. <a href="https://www.theregister.com/2016/12/13/boffin_dishes_10_mcafee_enterprise_bugs_for_chained_rce_root_death/" target="_blank">News coverage</a>
