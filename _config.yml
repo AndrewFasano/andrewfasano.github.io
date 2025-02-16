@@ -7,7 +7,7 @@
 
 # Site Settings
 title                    : "Andrew Fasano"
-description              : "Cybsersecurity researcher focused on dynamic program analysis of embedded systems for vulnerability discovery"
+description              : "Cybersecurity researcher focused on the intersection of cyber and AI"
 repository               : "AndrewFasano/andrewfasano.github.io"
 google_scholar_stats_use_cdn : true
 
@@ -23,8 +23,8 @@ baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.ba
 author:
   name             : "Dr. Andrew Fasano"
   avatar           : "images/af.jpg"
-  bio              : "Masachusetts Institute of Technology - Lincoln Laboratory"
-  location         : "Traveling the US by folding bike"
+  bio              : "US AI Safety Institute"
+  location         : "San Francisco, CA"
   employer         :
   pubmed           : 
   googlescholar    : "https://scholar.google.com/citations?user=Y9XVfSIAAAAJ"
