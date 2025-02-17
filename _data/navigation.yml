@@ -15,8 +15,8 @@ main:
   - title: "Invited Talks"
     url: "/#-invited-talks"
 
-  - title: "Blog"
-    url: "https://nation.state.actor"
-
   - title: "Honors and Awards"
     url: "/#-honors-and-awards"
+
+  - title: "Blog"
+    url: "https://nation.state.actor"
