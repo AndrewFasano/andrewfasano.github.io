@@ -45,7 +45,7 @@ All my publications are available as open access on <a href='https://scholar.goo
 # 📝 Academic Publications 
 - _Target-Centric Firmware Rehosting with Penguin_. **Andrew Fasano**, Zachary Estrada, Luke Craig, Ben Levy, Jordan McLeod, Jacques Becker, Elysia Witham, Cole DiLorenzo, Caden Kline, Ali Bobi, Dinko Dermendzhiev, Tim Leek, and William Robertson. **NDSS BAR 2025** (Preprint coming soon).
 
-- _Hypervisor Dissociative Execution: Programming Guests for Monitoring, Management, and Security_. **Andrew Fasano**, Zak Estrada, Timothy Leek, William Robertson. **ACSAC 2024**. [View pdf](https://andrewfasano.com/assets/files/hyde.pdf)
+- _Hypervisor Dissociative Execution: Programming Guests for Monitoring, Management, and Security_. **Andrew Fasano**, Zak Estrada, Timothy Leek, William Robertson. **ACSAC 2025**. [View pdf](https://andrewfasano.com/assets/files/hyde.pdf)
 
 - [Homo in Machina: Improving Fuzz Testing Coverage via Compartment Analysis](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Y9XVfSIAAAAJ&citation_for_view=Y9XVfSIAAAAJ:YsMSGLbcyi4C). Josh Bundt, **Andrew Fasano**, Brendan Dolan-Gavitt, William Robertson, Timothy Leek. **ACM AsiaCCS 2021**. [View pdf](https://arxiv.org/pdf/2212.11162.pdf)
 
