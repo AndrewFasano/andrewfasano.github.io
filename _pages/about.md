@@ -43,7 +43,7 @@ All my publications are available as open access on <a href='https://scholar.goo
 - **Rode0day**: A vulnerability discovery competition powered by LAVA where users compete to find new bugs each month. Unlike prior self-evaluations, Rode0day competitors had no knowledge of where the bugs were until we released the solutions after each competition ended. [Project website](https://rode0day.mit.edu) (No longer maintained)
 
 # 📝 Academic Publications 
-- _Target-Centric Firmware Rehosting with Penguin_. **Andrew Fasano**, Zachary Estrada, Luke Craig, Ben Levy, Jordan McLeod, Jacques Becker, Elysia Witham, Cole DiLorenzo, Caden Kline, Ali Bobi, Dinko Dermendzhiev, Tim Leek, and William Robertson. **NDSS BAR 2025** (Preprint coming soon).
+- _Target-Centric Firmware Rehosting with Penguin_. **Andrew Fasano**, Zachary Estrada, Luke Craig, Ben Levy, Jordan McLeod, Jacques Becker, Elysia Witham, Cole DiLorenzo, Caden Kline, Ali Bobi, Dinko Dermendzhiev, Tim Leek, and William Robertson. **NDSS BAR 2025** [View pdf](https://andrewfasano.com/assets/files/penguin.pdf)
 
 - _Hypervisor Dissociative Execution: Programming Guests for Monitoring, Management, and Security_. **Andrew Fasano**, Zak Estrada, Timothy Leek, William Robertson. **ACSAC 2025**. [View pdf](https://andrewfasano.com/assets/files/hyde.pdf)
 
