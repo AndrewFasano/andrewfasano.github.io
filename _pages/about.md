@@ -17,17 +17,17 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-I am a senior cybersecurity researcher focused on the cyber capabilities of AI systems. At the US AI Safety Institute (AISI), I leverage my background in cyber capability evaluation to assess current and next-generation AI models, studying the relationship between the capability frontier and potential cyber harms while advancing the science of AI security evaluations.
+I am a senior cybersecurity researcher focused on the cyber capabilities of AI systems. At the [NIST Center for AI Standards and Innovation](https://www.nist.gov/caisi) (CAISI, formerly known as the US AI Safety Institute), I leverage my background in cyber capability evaluation to assess current and next-generation AI models, studying the relationship between the capability frontier and potential cyber harms while advancing the science of AI security evaluations.
 
 Previously, I spent a decade at MIT Lincoln Laboratory in the [Cyber System Assessments Group](https://www.ll.mit.edu/r-d/cyber-security-and-information-sciences/cyber-system-assessments) where I led a research team focused on the intersection of dynamic program analysis, firmware security, and vulnerability discovery. In this role, I helped define the field of _firmware rehosting_ while building open-source tools and applying them to analyze critical systems' security. This work in systems security evaluation and testing methodology now informs my approach to understanding AI systems' capabilities and security implications.
 
-I earned my PhD in Computer Science from Northeastern University and BS from Rensselaer Polytechnic Institute, where I was an active member of RPISEC. I'm passionate about cybersecurity education and have developed courses for universities, government agencies, and private companies. The materials from my System Security with Dynamic Program Analysis course are <a href="https://github.com/andrewFasano/dpa" target="_blank">publicly available</a>.
+I earned my PhD in Computer Science from Northeastern University and BS from Rensselaer Polytechnic Institute, where I was an active member of [RPISEC](https://rpis.ec). I'm passionate about cybersecurity education and have developed courses for universities, government agencies, and private companies. The materials from my System Security with Dynamic Program Analysis course are <a href="https://github.com/andrewFasano/dpa" target="_blank">publicly available</a>.
 
 All my publications are available as open access on <a href='https://scholar.google.com/citations?user=Y9XVfSIAAAAJ'>Google Scholar</a>.
 
 
 # 🔥 News
-- *2024.11*: Joined the US AI Safety Institute as a senior advisor focused on cybersecurity
+- *2024.11*: Joined the <emph>Center AI Standards and Innovation</emph> to lead a team focused on the cyber capabilities of AI systems
 - *2024.08*: Gave a DEF CON talk about reverse engineering LLMs
 - *2022.11*: Ran my first international training course in Munich, Germany focused on firmware security
 - *2022.01*: Created and taught <emph>CS 4910</emph> &quot;Dynamic Program Analysis for System Security &quot; at Northeastern University
@@ -37,15 +37,15 @@ All my publications are available as open access on <a href='https://scholar.goo
 
 # 🧑‍💻 Open Source Projects
 - **Hypervisor Dissociative Execution**: A framework for dynamic analysis of virtualized guest systems based on system call injection. [GitHub Repository](http://github.com/andrewFasano/hyde).
-- **Firmware Rehosting**: _Suite of tools for automated firmware rehosting and dynamic analysis of firmware to be released alongside BAR 2025 publication_
+- **PENGUIN**: A suite of tools for automated firmware rehosting and whole system, dynamic program analysis of firmware. [GitHub Repository](https://github.com/rehosting/penguin).
 - **PANDA.re**: A whole-system dynamic analysis platform for reverse engineering and software understanding. Fork of the QEMU codebase with significant modifications to enable record/replay, a plugin architecture, and Python based analyses. [GitHub Repository](https://github.com/panda-re/panda). [Project Website](https://panda.re)
 - **LAVA**: An automated framework for injecting vulnerabilities into software to evaluate bug-finding systems. LAVA uses PANDA's whole-system dynamic taint analysis to identify how input data flow through a program and uses this information to propose and evaluate patches to soruce code to add vulnerabilities. [GitHub Repository](https://github.com/panda-re/lava) (No longer maintained)
-- **Rode0day**: A vulnerability discovery competition powered by LAVA where users compete to find new bugs each month. Unlike prior self-evaluations, Rode0day competitors had no knowledge of where the bugs were until we released the solutions after each competition ended. [Project website](https://rode0day.mit.edu) (No longer maintained)
+- **Rode0day**: A vulnerability discovery competition powered by LAVA where users compete to find new bugs each month. Unlike prior self-evaluations, Rode0day competitors had no knowledge of where the bugs were until we released the solutions after each competition ended. [Archived project website](https://web.archive.org/web/20240726105111/https://rode0day.mit.edu/) (No longer maintained)
 
 # 📝 Academic Publications 
-- _Target-Centric Firmware Rehosting with Penguin_. **Andrew Fasano**, Zachary Estrada, Luke Craig, Ben Levy, Jordan McLeod, Jacques Becker, Elysia Witham, Cole DiLorenzo, Caden Kline, Ali Bobi, Dinko Dermendzhiev, Tim Leek, and William Robertson. **NDSS BAR 2025** [View pdf](https://andrewfasano.com/assets/files/penguin.pdf)
+- [Target-Centric Firmware Rehosting with Penguin](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Y9XVfSIAAAAJ&sortby=pubdate&citation_for_view=Y9XVfSIAAAAJ:ufrVoPGSRksC). **Andrew Fasano**, Zachary Estrada, Luke Craig, Ben Levy, Jordan McLeod, Jacques Becker, Elysia Witham, Cole DiLorenzo, Caden Kline, Ali Bobi, Dinko Dermendzhiev, Tim Leek, and William Robertson. **NDSS BAR 2025** [View pdf](https://andrewfasano.com/assets/files/penguin.pdf)
 
-- _Hypervisor Dissociative Execution: Programming Guests for Monitoring, Management, and Security_. **Andrew Fasano**, Zak Estrada, Timothy Leek, William Robertson. **ACSAC 2025**. [View pdf](https://andrewfasano.com/assets/files/hyde.pdf)
+- [Hypervisor Dissociative Execution: Programming Guests for Monitoring, Management, and Security](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Y9XVfSIAAAAJ&sortby=pubdate&citation_for_view=Y9XVfSIAAAAJ:WF5omc3nYNoC). **Andrew Fasano**, Zak Estrada, Timothy Leek, William Robertson. **ACSAC 2025**. [View pdf](https://andrewfasano.com/assets/files/hyde.pdf)
 
 - [Homo in Machina: Improving Fuzz Testing Coverage via Compartment Analysis](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Y9XVfSIAAAAJ&citation_for_view=Y9XVfSIAAAAJ:YsMSGLbcyi4C). Josh Bundt, **Andrew Fasano**, Brendan Dolan-Gavitt, William Robertson, Timothy Leek. **ACM AsiaCCS 2021**. [View pdf](https://arxiv.org/pdf/2212.11162.pdf)
 
@@ -64,7 +64,6 @@ All my publications are available as open access on <a href='https://scholar.goo
 - *2019.10*, **AvengerCon**: "The LAVA has Hardened! Building a Better Bug Corpora to Evaluate Bug-Finders"
 - *2019.08*, **USENIX WOOT**: "Rode0day: A Year of Bug-Finding Evaluations"
 - *2018.08*, **USENIX WOOT**: "Rode0day: Searching for Truth with a Bug-Finding Competition"
-- *2018.10*, **MIT Techsec**: "Intro to Web Exploitation"
 
 # 🎖 Honors and Awards
 - *2020.09* **R&D100 Award**: LAVA was [awarded an R&D100 award](https://www.rdworldonline.com/rd-100-2020-winner/lava-large-scale-vulnerability-addition/) for its impact advancing the state of the art in vulnerability discovery.
