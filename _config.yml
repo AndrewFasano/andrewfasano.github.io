@@ -23,7 +23,7 @@ baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.ba
 author:
   name             : "Dr. Andrew Fasano"
   avatar           : "images/af.jpg"
-  bio              : "US AI Safety Institute"
+  bio              : "Center for AI Standards and Innovation (Formerly known as the US AI Safety Institute)"
   location         : "San Francisco, CA"
   employer         :
   pubmed           : 
