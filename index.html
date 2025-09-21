@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andrew Fasano</title>
+    <meta name="description" content="Cybersecurity researcher focused on the intersection of cyber and AI">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+
+        .sidebar {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            height: fit-content;
+            position: sticky;
+            top: 20px;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: block;
+            object-fit: cover;
+        }
+
+        .sidebar h1 {
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 1.5em;
+            color: #2c3e50;
+        }
+
+        .sidebar .bio {
+            text-align: center;
+            margin-bottom: 20px;
+            font-style: italic;
+            color: #666;
+        }
+
+        .sidebar .location {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #666;
+        }
+
+        .social-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            color: #333;
+            font-size: 1.2em;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #007bff;
+        }
+
+        .main-content {
+            padding: 0 20px;
+        }
+
+        h1, h2, h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            border-bottom: 3px solid #007bff;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            font-size: 1.3em;
+            margin-top: 30px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .news-item {
+            margin-bottom: 8px;
+        }
+
+        .news-date {
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        .publication {
+            margin-bottom: 15px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-left: 4px solid #007bff;
+            border-radius: 5px;
+        }
+
+        .publication-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .publication-authors {
+            font-style: italic;
+            margin-bottom: 5px;
+        }
+
+        .publication-venue {
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .disclaimer {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 40px;
+            font-size: 0.9em;
+        }
+
+        .anchor {
+            display: block;
+            position: relative;
+            top: -60px;
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <img src="images/af.jpg" alt="Andrew Fasano" class="profile-img">
+            <h1>Dr. Andrew Fasano</h1>
+            <div class="bio">Center for AI Standards and Innovation (Formerly known as the US AI Safety Institute)</div>
+            <div class="location"><i class="fas fa-map-marker-alt"></i> San Francisco, CA</div>
+
+            <div class="social-links">
+                <a href="mailto:nation@state.actor" title="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://scholar.google.com/citations?user=Y9XVfSIAAAAJ" title="Google Scholar" target="_blank"><i class="fas fa-graduation-cap"></i></a>
+                <a href="https://github.com/andrewfasano" title="GitHub" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/fasano" title="LinkedIn" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://twitter.com/andrewfasano" title="Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://orcid.org/0000-0003-3149-9425" title="ORCID" target="_blank"><i class="fab fa-orcid"></i></a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <span class="anchor" id="about-me"></span>
+
+            <p>As a senior cybersecurity researcher at NIST's <a href="https://www.nist.gov/caisi" target="_blank">Center for AI Standards and Innovation</a> (CAISI), I lead a research team tracking the cyber offense capabilities of AI systems through pre- and post-deployment model evaluations. I also support a team assessing vulnerabilities in AI systems. Working with leading AI labs and U.S. government partners, my work advances understanding of AI's national security implications and strengthens the resilience of these critical technologies.</p>
+
+            <p>Previously, I spent a decade at MIT Lincoln Laboratory in the <a href="https://www.ll.mit.edu/r-d/cyber-security-and-information-sciences/cyber-system-assessments" target="_blank">Cyber System Assessments Group</a>, where I led a research team at the intersection of dynamic program analysis, firmware security, and vulnerability discovery. In that role, I helped define the field of <em>firmware rehosting</em>, developed open-source tools, and applied them to evaluate the security of critical systems. This foundation in systems security evaluation and testing methodology now shapes how I approach AI: treating models themselves as complex, attackable systems.</p>
+
+            <p>I earned my PhD in Computer Science from Northeastern University and BS from Rensselaer Polytechnic Institute, where I was an active member of <a href="https://rpis.ec" target="_blank">RPISEC</a> and its cyber Capture the Flag (CTF) team. I'm also passionate about cybersecurity education, having developed courses for universities, government agencies, and private companies. The materials from my <em>System Security with Dynamic Program Analysis</em> course are <a href="https://github.com/andrewFasano/dpa" target="_blank">publicly available</a>.</p>
+
+            <h2>🔥 News</h2>
+            <ul>
+                <li class="news-item"><span class="news-date">2025.09</span>: OpenAI <a href="https://openai.com/index/us-caisi-uk-aisi-ai-update/" target="_blank">blogged</a> about "a sophisticated exploit chain combining traditional software vulnerabilities with AI vulnerabilities" that I discovered.</li>
+                <li class="news-item"><span class="news-date">2024.11</span>: Joined the <em>Center AI Standards and Innovation</em> to lead a team focused on the cyber capabilities of AI systems</li>
+                <li class="news-item"><span class="news-date">2024.08</span>: Gave a DEF CON talk about reverse engineering LLMs</li>
+                <li class="news-item"><span class="news-date">2022.11</span>: Ran my first international training course in Munich, Germany focused on firmware security</li>
+                <li class="news-item"><span class="news-date">2022.01</span>: Created and taught <em>CS 4910</em> "Dynamic Program Analysis for System Security" at Northeastern University</li>
+                <li class="news-item"><span class="news-date">2021.05</span>: Presented our SoK paper <em>Enabling security analyses of embedded systems via rehosting</em> at AsiaCCS 2021</li>
+                <li class="news-item"><span class="news-date">2017.07</span>: Led the Lab RATs to a 10th place finish in <a href="https://www.defcon.org/html/links/dc-ctf.html" target="_blank">DEF CON CTF finals</a>. <a href="https://news.mit.edu/2017/mit-team-lincoln-laboratory-scores-big-at-def-con-hacking-competition-0918" target="_blank">News coverage</a></li>
+                <li class="news-item"><span class="news-date">2016.12</span>: Discovered <a href="https://nation.state.actor" target="_blank">10 CVEs in a McAfee antivirus product</a>. <a href="https://www.theregister.com/2016/12/13/boffin_dishes_10_mcafee_enterprise_bugs_for_chained_rce_root_death/" target="_blank">News coverage</a></li>
+            </ul>
+
+            <h2>🧑‍💻 Open Source Projects</h2>
+            <ul>
+                <li><strong>Hypervisor Dissociative Execution</strong>: A framework for dynamic analysis of virtualized guest systems based on system call injection. <a href="http://github.com/andrewFasano/hyde" target="_blank">GitHub Repository</a>.</li>
+                <li><strong>PENGUIN</strong>: A suite of tools for automated firmware rehosting and whole system, dynamic program analysis of firmware. <a href="https://github.com/rehosting/penguin" target="_blank">GitHub Repository</a>.</li>
+                <li><strong>PANDA.re</strong>: A whole-system dynamic analysis platform for reverse engineering and software understanding. Fork of the QEMU codebase with significant modifications to enable record/replay, a plugin architecture, and Python based analyses. <a href="https://github.com/panda-re/panda" target="_blank">GitHub Repository</a>. <a href="https://panda.re" target="_blank">Project Website</a></li>
+                <li><strong>LAVA</strong>: An automated framework for injecting vulnerabilities into software to evaluate bug-finding systems. LAVA uses PANDA's whole-system dynamic taint analysis to identify how input data flow through a program and uses this information to propose and evaluate patches to source code to add vulnerabilities. <a href="https://github.com/panda-re/lava" target="_blank">GitHub Repository</a> (No longer maintained)</li>
+                <li><strong>Rode0day</strong>: A vulnerability discovery competition powered by LAVA where users compete to find new bugs each month. Unlike prior self-evaluations, Rode0day competitors had no knowledge of where the bugs were until we released the solutions after each competition ended. <a href="https://web.archive.org/web/20240726105111/https://rode0day.mit.edu/" target="_blank">Archived project website</a> (No longer maintained)</li>
+            </ul>
+
+            <h2>📝 Academic Publications</h2>
+            <p>All my publications are available as open access on <a href="https://scholar.google.com/citations?user=Y9XVfSIAAAAJ" target="_blank">Google Scholar</a>.</p>
+
+            <div class="publication">
+                <div class="publication-title">Target-Centric Firmware Rehosting with Penguin</div>
+                <div class="publication-authors"><strong>Andrew Fasano</strong>, Zachary Estrada, Luke Craig, Ben Levy, Jordan McLeod, Jacques Becker, Elysia Witham, Cole DiLorenzo, Caden Kline, Ali Bobi, Dinko Dermendzhiev, Tim Leek, and William Robertson.</div>
+                <div class="publication-venue"><strong>NDSS BAR 2025</strong></div>
+                <a href="https://andrewfasano.com/assets/files/penguin.pdf" target="_blank">View PDF</a>
+            </div>
+
+            <div class="publication">
+                <div class="publication-title">Hypervisor Dissociative Execution: Programming Guests for Monitoring, Management, and Security</div>
+                <div class="publication-authors"><strong>Andrew Fasano</strong>, Zak Estrada, Timothy Leek, William Robertson.</div>
+                <div class="publication-venue"><strong>ACSAC 2025</strong></div>
+                <a href="https://andrewfasano.com/assets/files/hyde.pdf" target="_blank">View PDF</a>
+            </div>
+
+            <div class="publication">
+                <div class="publication-title">Homo in Machina: Improving Fuzz Testing Coverage via Compartment Analysis</div>
+                <div class="publication-authors">Josh Bundt, <strong>Andrew Fasano</strong>, Brendan Dolan-Gavitt, William Robertson, Timothy Leek.</div>
+                <div class="publication-venue"><strong>ACM AsiaCCS 2021</strong></div>
+                <a href="https://arxiv.org/pdf/2212.11162.pdf" target="_blank">View PDF</a>
+            </div>
+
+            <div class="publication">
+                <div class="publication-title">PyPANDA: Taming the PANDAmonium of Whole System Dynamic Analysis</div>
+                <div class="publication-authors">Luke Craig, <strong>Andrew Fasano</strong>, Tiemoko Ballo, Timothy Leek, Brendan Dolan-Gavitt, William Robertson.</div>
+                <div class="publication-venue"><strong>NDSS BAR 2021</strong></div>
+                <a href="https://www.ndss-symposium.org/wp-content/uploads/bar2021_23001_paper.pdf" target="_blank">View PDF</a>
+            </div>
+
+            <div class="publication">
+                <div class="publication-title">Evaluating Synthetic bugs</div>
+                <div class="publication-authors">Josh Bundt, <strong>Andrew Fasano</strong>, Brendan Dolan-Gavitt, William Robertson, Timothy Leek.</div>
+                <div class="publication-venue"><strong>ACM AsiaCCS 2021</strong></div>
+                <a href="https://dl.acm.org/doi/pdf/10.1145/3433210.3453096" target="_blank">View PDF</a>
+            </div>
+
+            <div class="publication">
+                <div class="publication-title">SoK: Enabling Security Analyses of Embedded Systems via Rehosting</div>
+                <div class="publication-authors"><strong>Andrew Fasano</strong>, Tiemoko Ballo, Marius Muench, Tim Leek, Alexander Bulekov, Brendan Dolan-Gavitt, Manuel Egele, Aurelien Francillon, Long Lu, Nick Gregory, Davide Balzarotti, William Robertson.</div>
+                <div class="publication-venue"><strong>ACM AsiaCCS 2021</strong></div>
+                <a href="https://dspace.mit.edu/handle/1721.1/130505" target="_blank">View PDF</a>
+            </div>
+
+            <div class="publication">
+                <div class="publication-title">The Rode0day to Less Buggy Programs</div>
+                <div class="publication-authors"><strong>Andrew Fasano</strong>, Tim Leek, Brendan Dolan-Gavitt, Josh Bundt.</div>
+                <div class="publication-venue"><strong>IEEE Security and Privacy Magazine 2019</strong></div>
+                <a href="https://messlab.moyix.net/papers/rode0day_spmag19.pdf" target="_blank">View PDF</a>
+            </div>
+
+            <h2>💬 Invited Talks</h2>
+            <ul>
+                <li><em>2025.08</em>, <strong>Redacted (US Government Conference)</strong>: AI Targets, AI Attackers: A case study on AI Agent Exploit Chains.</li>
+                <li><em>2024.08</em>, <strong>DEFCON AIxCC</strong>: "A Reverse Engineer's Guide to Mechanistic Interpretability" <a href="https://vimeo.com/997479806" target="_blank">Video</a> and <a href="https://nation.state.actor/2024/08/21/defcon.html" target="_blank">slides</a>.</li>
+                <li><em>2023.10</em>, <strong>New York University</strong>: "The Trials, Tribulations, and Triumphs of Whole System Dynamic Analysis: Lessons from a Decade in the Trenches"</li>
+                <li><em>2019.10</em>, <strong>AvengerCon</strong>: "The LAVA has Hardened! Building a Better Bug Corpora to Evaluate Bug-Finders"</li>
+                <li><em>2019.08</em>, <strong>USENIX WOOT</strong>: "Rode0day: A Year of Bug-Finding Evaluations"</li>
+                <li><em>2018.08</em>, <strong>USENIX WOOT</strong>: "Rode0day: Searching for Truth with a Bug-Finding Competition"</li>
+            </ul>
+
+            <h2>🎖 Honors and Awards</h2>
+            <ul>
+                <li><em>2020.09</em> <strong>R&D100 Award</strong>: LAVA was <a href="https://www.rdworldonline.com/rd-100-2020-winner/lava-large-scale-vulnerability-addition/" target="_blank">awarded an R&D100 award</a> for its impact advancing the state of the art in vulnerability discovery.</li>
+                <li><em>2019.09</em> <strong>MIT Lincoln Scholar Award</strong>: Selected to receive special funding through a competitive process to pursue my research.</li>
+                <li><em>2017.06</em> <strong>MIT Lincoln Laboratory Team Award</strong>: Award for outstanding technical achievement.</li>
+            </ul>
+
+            <div class="disclaimer">
+                <h3>Disclaimer</h3>
+                <p>This is a personal website. The views expressed here are my own and do not necessarily represent the views of my employer or any other organization.</p>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
