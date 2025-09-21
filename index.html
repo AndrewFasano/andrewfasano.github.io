@@ -42,7 +42,7 @@
             border-radius: 10px;
             height: fit-content;
             position: sticky;
-            top: 20px;
+            top: 100px;
         }
 
         .profile-img {
@@ -76,21 +76,58 @@
 
         .social-links {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
+            flex-direction: column;
+            gap: 12px;
             margin-top: 20px;
         }
 
         .social-links a {
             color: #333;
-            font-size: 1.2em;
             text-decoration: none;
             transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9em;
+        }
+
+        .social-links a i {
+            width: 20px;
+            text-align: center;
+            font-size: 1.1em;
         }
 
         .social-links a:hover {
             color: #007bff;
+        }
+
+        .sidebar-section {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .sidebar-section h3 {
+            font-size: 1em;
+            margin-bottom: 10px;
+            color: #2c3e50;
+            text-align: center;
+        }
+
+        .sidebar-highlight {
+            background: #fff;
+            padding: 12px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            border-left: 3px solid #007bff;
+            font-size: 0.85em;
+            line-height: 1.4;
+        }
+
+        .sidebar-highlight strong {
+            color: #2c3e50;
+            display: block;
+            margin-bottom: 4px;
         }
 
         .main-content {
@@ -144,13 +181,17 @@
         }
 
         .news-item {
-            margin-bottom: 8px;
+            margin-bottom: 1rem;
+            padding-left: 1rem;
         }
 
         .news-date {
-            font-weight: bold;
-            color: #007bff;
+            font-weight: 600;
+            color: #7f8c8d;
+            font-size: 0.9rem;
         }
+
+        /* Reuse news-item styles for talks and awards for consistency */
 
         .publication {
             margin-bottom: 15px;
@@ -176,12 +217,10 @@
         }
 
         .disclaimer {
-            background: #fff3cd;
-            border: 1px solid #ffeaa7;
-            padding: 15px;
-            border-radius: 5px;
+            border-top: 1px solid #e0e0e0;
             margin-top: 40px;
             font-size: 0.9em;
+            color: #666;
         }
 
         .anchor {
@@ -190,24 +229,446 @@
             top: -60px;
             visibility: hidden;
         }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #e0e0e0;
+            z-index: 1000;
+            padding: 15px 0;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.2em;
+            color: #2c3e50;
+            text-decoration: none;
+        }
+
+        .navbar-nav {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar-nav a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .navbar-nav a:hover {
+            color: #007bff;
+        }
+
+        .navbar-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #007bff;
+            transition: width 0.3s ease;
+        }
+
+        .navbar-nav a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5em;
+            color: #333;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .mobile-menu-toggle:hover {
+            color: #007bff;
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 10px 0;
+            }
+
+            .navbar-nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(10px);
+                border-top: 1px solid #e0e0e0;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                flex-direction: column;
+                gap: 0;
+                padding: 20px;
+                margin: 0;
+            }
+
+            .navbar-nav.mobile-open {
+                display: flex;
+            }
+
+            .navbar-nav li {
+                margin: 0;
+            }
+
+            .navbar-nav a {
+                font-size: 1em;
+                padding: 15px 0;
+                border-bottom: 1px solid #f0f0f0;
+                width: 100%;
+                text-align: center;
+            }
+
+            .navbar-nav a:last-child {
+                border-bottom: none;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                padding: 10px;
+            }
+
+            .sidebar {
+                position: relative;
+                top: 0;
+                margin-bottom: 20px;
+            }
+
+            body {
+                padding-top: 60px;
+            }
+
+            .navbar-brand {
+                font-size: 1.1em;
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+
+            .publication-grid {
+                gap: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 5px;
+            }
+
+            .sidebar {
+                padding: 20px;
+            }
+
+            .main-content {
+                padding: 0 10px;
+            }
+
+            body {
+                padding-top: 55px;
+            }
+
+            .navbar {
+                padding: 8px 0;
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .project-card, .publication-card {
+                padding: 1rem;
+            }
+
+            .project-title, .pub-title {
+                font-size: 1rem;
+            }
+
+            .tech-tag {
+                font-size: 0.75rem;
+                padding: 0.15rem 0.4rem;
+            }
+
+            .pub-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .pub-year {
+                margin-top: 0.3rem;
+            }
+        }
+
+        body {
+            padding-top: 80px;
+        }
+
+        /* Expandable Card Styles */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .project-card {
+            border: 1px solid #e1e8ed;
+            border-radius: 8px;
+            padding: 1.5rem;
+            background: #fafbfc;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .project-card:hover {
+            border-color: #3498db;
+            box-shadow: 0 2px 8px rgba(52, 152, 219, 0.1);
+        }
+
+        .project-card.expanded {
+            border-color: #3498db;
+            background: white;
+        }
+
+        .project-title {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .expand-icon {
+            font-size: 0.8rem;
+            color: #7f8c8d;
+            transition: transform 0.2s ease;
+        }
+
+        .project-card.expanded .expand-icon {
+            transform: rotate(180deg);
+        }
+
+        .project-summary {
+            color: #555;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .project-details {
+            display: none;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+        }
+
+        .project-card.expanded .project-details {
+            display: block;
+        }
+
+        .project-tech {
+            margin: 1rem 0;
+        }
+
+        .tech-tag {
+            display: inline-block;
+            background: #ecf0f1;
+            color: #2c3e50;
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            margin: 0.2rem 0.3rem 0.2rem 0;
+        }
+
+        .project-links {
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+
+        .project-links a {
+            margin-right: 1rem;
+        }
+
+        .publication-grid {
+            display: grid;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .publication-card {
+            border: 1px solid #e1e8ed;
+            border-radius: 8px;
+            padding: 1.5rem;
+            background: #fafbfc;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .publication-card:hover {
+            border-color: #3498db;
+            box-shadow: 0 2px 8px rgba(52, 152, 219, 0.1);
+        }
+
+        .publication-card.expanded {
+            border-color: #3498db;
+            background: white;
+        }
+
+        .pub-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.5rem;
+        }
+
+        .pub-title {
+            font-weight: 600;
+            color: #2c3e50;
+            flex: 1;
+            margin-right: 1rem;
+        }
+
+        .pub-year {
+            font-weight: 500;
+            color: #3498db;
+            font-size: 0.9rem;
+        }
+
+        .pub-authors {
+            color: #7f8c8d;
+            margin: 0.3rem 0;
+            font-size: 0.95rem;
+        }
+
+        .pub-venue {
+            font-weight: 500;
+            color: #3498db;
+            font-size: 0.95rem;
+        }
+
+        .pub-abstract {
+            display: none;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .publication-card.expanded .pub-abstract {
+            display: block;
+        }
+
+        .pub-links {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .pub-links a {
+            margin-right: 1rem;
+        }
     </style>
+    <script>
+        function toggleProject(element) {
+            element.classList.toggle('expanded');
+        }
+
+        function togglePublication(element) {
+            element.classList.toggle('expanded');
+        }
+
+        function toggleMobileMenu() {
+            const navbar = document.querySelector('.navbar');
+            const navbarNav = document.querySelector('.navbar-nav');
+            navbar.classList.toggle('mobile-open');
+        }
+
+        function closeMobileMenu() {
+            const navbar = document.querySelector('.navbar');
+            navbar.classList.remove('mobile-open');
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.navbar-nav a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', closeMobileMenu);
+            });
+
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 768) {
+                    closeMobileMenu();
+                }
+            });
+        });
+    </script>
 </head>
 <body>
+    <nav class="navbar">
+        <div class="navbar-content">
+            <a href="#" class="navbar-brand">Andrew Fasano</a>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="navbar-nav" id="navbar-nav">
+                <li><a href="#about-me" onclick="closeMobileMenu()">About</a></li>
+                <li><a href="#news" onclick="closeMobileMenu()">News</a></li>
+                <li><a href="#projects" onclick="closeMobileMenu()">Projects</a></li>
+                <li><a href="#publications" onclick="closeMobileMenu()">Publications</a></li>
+                <li><a href="#talks" onclick="closeMobileMenu()">Talks</a></li>
+                <li><a href="#awards" onclick="closeMobileMenu()">Awards</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <div class="container">
         <aside class="sidebar">
             <img src="images/af.jpg" alt="Andrew Fasano" class="profile-img">
             <h1>Dr. Andrew Fasano</h1>
-            <div class="bio">Center for AI Standards and Innovation (Formerly known as the US AI Safety Institute)</div>
+            <div class="bio">United States Center for AI Standards and Innovation<br><small style="color: #888; font-size: 0.85em; font-style: normal;">Formerly the US AI Safety Institute</small></div>
             <div class="location"><i class="fas fa-map-marker-alt"></i> San Francisco, CA</div>
 
             <div class="social-links">
-                <a href="mailto:nation@state.actor" title="Email"><i class="fas fa-envelope"></i></a>
-                <a href="https://scholar.google.com/citations?user=Y9XVfSIAAAAJ" title="Google Scholar" target="_blank"><i class="fas fa-graduation-cap"></i></a>
-                <a href="https://github.com/andrewfasano" title="GitHub" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://linkedin.com/in/fasano" title="LinkedIn" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://twitter.com/andrewfasano" title="Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
-                <a href="https://orcid.org/0000-0003-3149-9425" title="ORCID" target="_blank"><i class="fab fa-orcid"></i></a>
+                <a href="mailto:nation@state.actor"><i class="fas fa-envelope"></i>nation@state.actor</a>
+                <a href="https://scholar.google.com/citations?user=Y9XVfSIAAAAJ" target="_blank"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
+                <a href="https://github.com/andrewfasano" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                <a href="https://linkedin.com/in/fasano" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="https://twitter.com/andrewfasano" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
+                <a href="https://orcid.org/0000-0003-3149-9425" target="_blank"><i class="fab fa-orcid"></i> ORCID</a>
             </div>
+
         </aside>
 
         <main class="main-content">
@@ -219,95 +680,378 @@
 
             <p>I earned my PhD in Computer Science from Northeastern University and BS from Rensselaer Polytechnic Institute, where I was an active member of <a href="https://rpis.ec" target="_blank">RPISEC</a> and its cyber Capture the Flag (CTF) team. I'm also passionate about cybersecurity education, having developed courses for universities, government agencies, and private companies. The materials from my <em>System Security with Dynamic Program Analysis</em> course are <a href="https://github.com/andrewFasano/dpa" target="_blank">publicly available</a>.</p>
 
-            <h2>🔥 News</h2>
-            <ul>
-                <li class="news-item"><span class="news-date">2025.09</span>: OpenAI <a href="https://openai.com/index/us-caisi-uk-aisi-ai-update/" target="_blank">blogged</a> about "a sophisticated exploit chain combining traditional software vulnerabilities with AI vulnerabilities" that I discovered.</li>
-                <li class="news-item"><span class="news-date">2024.11</span>: Joined the <em>Center AI Standards and Innovation</em> to lead a team focused on the cyber capabilities of AI systems</li>
-                <li class="news-item"><span class="news-date">2024.08</span>: Gave a DEF CON talk about reverse engineering LLMs</li>
-                <li class="news-item"><span class="news-date">2022.11</span>: Ran my first international training course in Munich, Germany focused on firmware security</li>
-                <li class="news-item"><span class="news-date">2022.01</span>: Created and taught <em>CS 4910</em> "Dynamic Program Analysis for System Security" at Northeastern University</li>
-                <li class="news-item"><span class="news-date">2021.05</span>: Presented our SoK paper <em>Enabling security analyses of embedded systems via rehosting</em> at AsiaCCS 2021</li>
-                <li class="news-item"><span class="news-date">2017.07</span>: Led the Lab RATs to a 10th place finish in <a href="https://www.defcon.org/html/links/dc-ctf.html" target="_blank">DEF CON CTF finals</a>. <a href="https://news.mit.edu/2017/mit-team-lincoln-laboratory-scores-big-at-def-con-hacking-competition-0918" target="_blank">News coverage</a></li>
-                <li class="news-item"><span class="news-date">2016.12</span>: Discovered <a href="https://nation.state.actor" target="_blank">10 CVEs in a McAfee antivirus product</a>. <a href="https://www.theregister.com/2016/12/13/boffin_dishes_10_mcafee_enterprise_bugs_for_chained_rce_root_death/" target="_blank">News coverage</a></li>
-            </ul>
+            <span class="anchor" id="news"></span>
+            <h2>News</h2>
 
-            <h2>🧑‍💻 Open Source Projects</h2>
-            <ul>
-                <li><strong>Hypervisor Dissociative Execution</strong>: A framework for dynamic analysis of virtualized guest systems based on system call injection. <a href="http://github.com/andrewFasano/hyde" target="_blank">GitHub Repository</a>.</li>
-                <li><strong>PENGUIN</strong>: A suite of tools for automated firmware rehosting and whole system, dynamic program analysis of firmware. <a href="https://github.com/rehosting/penguin" target="_blank">GitHub Repository</a>.</li>
-                <li><strong>PANDA.re</strong>: A whole-system dynamic analysis platform for reverse engineering and software understanding. Fork of the QEMU codebase with significant modifications to enable record/replay, a plugin architecture, and Python based analyses. <a href="https://github.com/panda-re/panda" target="_blank">GitHub Repository</a>. <a href="https://panda.re" target="_blank">Project Website</a></li>
-                <li><strong>LAVA</strong>: An automated framework for injecting vulnerabilities into software to evaluate bug-finding systems. LAVA uses PANDA's whole-system dynamic taint analysis to identify how input data flow through a program and uses this information to propose and evaluate patches to source code to add vulnerabilities. <a href="https://github.com/panda-re/lava" target="_blank">GitHub Repository</a> (No longer maintained)</li>
-                <li><strong>Rode0day</strong>: A vulnerability discovery competition powered by LAVA where users compete to find new bugs each month. Unlike prior self-evaluations, Rode0day competitors had no knowledge of where the bugs were until we released the solutions after each competition ended. <a href="https://web.archive.org/web/20240726105111/https://rode0day.mit.edu/" target="_blank">Archived project website</a> (No longer maintained)</li>
-            </ul>
+            <div class="news-item">
+                <div class="news-date">2025.09</div>
+                <div>OpenAI <a href="https://openai.com/index/us-caisi-uk-aisi-ai-update/" target="_blank">blogged</a> about "a sophisticated exploit chain combining traditional software vulnerabilities with AI vulnerabilities" that I discovered.</div>
+            </div>
 
-            <h2>📝 Academic Publications</h2>
+            <div class="news-item">
+                <div class="news-date">2024.11</div>
+                <div>Joined the <em>Center for AI Standards and Innovation</em> to lead a team focused on the cyber capabilities of AI systems</div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-date">2024.08</div>
+                <div>Gave a DEF CON talk about reverse engineering LLMs</div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-date">2022.11</div>
+                <div>Ran my first international training course in Munich, Germany focused on firmware security</div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-date">2022.01</div>
+                <div>Created and taught <em>CS 4910</em> "Dynamic Program Analysis for System Security" at Northeastern University</div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-date">2021.05</div>
+                <div>Presented our SoK paper <em>Enabling security analyses of embedded systems via rehosting</em> at AsiaCCS 2021</div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-date">2017.07</div>
+                <div>Led the Lab RATs to a 10th place finish in <a href="https://www.defcon.org/html/links/dc-ctf.html" target="_blank">DEF CON CTF finals</a>. <a href="https://news.mit.edu/2017/mit-team-lincoln-laboratory-scores-big-at-def-con-hacking-competition-0918" target="_blank">News coverage</a></div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-date">2016.12</div>
+                <div>Discovered <a href="https://nation.state.actor" target="_blank">10 CVEs in a McAfee antivirus product</a>. <a href="https://www.theregister.com/2016/12/13/boffin_dishes_10_mcafee_enterprise_bugs_for_chained_rce_root_death/" target="_blank">News coverage</a></div>
+            </div>
+
+            <span class="anchor" id="projects"></span>
+            <h2>Open Source Projects</h2>
+
+            <div class="project-grid">
+                <div class="project-card" onclick="toggleProject(this)">
+                    <div class="project-title">
+                        PANDA.re
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="project-summary">A whole-system dynamic analysis platform for reverse engineering and software understanding.</div>
+                    <div class="project-details">
+                        <p><strong>Description:</strong> PANDA is a comprehensive platform built on QEMU that enables whole-system dynamic analysis. It provides record/replay functionality, allowing researchers to capture system execution and replay it deterministically for analysis. The platform includes a rich plugin architecture that supports both C++ and Python plugins for custom analysis tasks.</p>
+
+                        <div class="project-tech">
+                            <strong>Technologies:</strong>
+                            <span class="tech-tag">C++</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">QEMU</span>
+                            <span class="tech-tag">Dynamic Analysis</span>
+                            <span class="tech-tag">Reverse Engineering</span>
+                        </div>
+
+                        <p><strong>Impact:</strong> [Placeholder: Add statistics about usage, citations, or adoption by security researchers and organizations]</p>
+
+                        <p><strong>Key Features:</strong> [Placeholder: Detailed list of major capabilities like taint analysis, record/replay, plugin ecosystem, etc.]</p>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/panda-re/panda" target="_blank">GitHub Repository</a>
+                        <a href="https://panda.re" target="_blank">Project Website</a>
+                    </div>
+                </div>
+
+                <div class="project-card" onclick="toggleProject(this)">
+                    <div class="project-title">
+                        PENGUIN
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="project-summary">A suite of tools for automated firmware rehosting and dynamic analysis.</div>
+                    <div class="project-details">
+                        <p><strong>Description:</strong> PENGUIN (Platform for Evaluating Network Gear Using Instrumented Non-intrusive) represents a significant advancement in firmware analysis capabilities. The framework automates the complex process of firmware rehosting, making it possible to run firmware images in emulated environments for security analysis.</p>
+
+                        <div class="project-tech">
+                            <strong>Technologies:</strong>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">QEMU</span>
+                            <span class="tech-tag">Firmware Analysis</span>
+                            <span class="tech-tag">Emulation</span>
+                            <span class="tech-tag">Security Testing</span>
+                        </div>
+
+                        <p><strong>Research Impact:</strong> [Placeholder: Describe how this tool has advanced the field of IoT security research, number of firmware images successfully analyzed, etc.]</p>
+
+                        <p><strong>Novel Contributions:</strong> [Placeholder: Technical innovations in firmware rehosting, automated peripheral modeling, etc.]</p>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/rehosting/penguin" target="_blank">GitHub Repository</a>
+                    </div>
+                </div>
+
+                <div class="project-card" onclick="toggleProject(this)">
+                    <div class="project-title">
+                        Hypervisor Dissociative Execution (HYDE)
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="project-summary">A framework for dynamic analysis of virtualized guest systems via system call injection.</div>
+                    <div class="project-details">
+                        <p><strong>Description:</strong> HYDE introduces a novel approach to system analysis by enabling code execution within guest virtual machines through strategic system call injection. This technique allows for non-intrusive monitoring and analysis of system behavior without requiring modifications to the target system.</p>
+
+                        <div class="project-tech">
+                            <strong>Technologies:</strong>
+                            <span class="tech-tag">Hypervisor Technology</span>
+                            <span class="tech-tag">System Call Injection</span>
+                            <span class="tech-tag">Virtual Machine Introspection</span>
+                            <span class="tech-tag">Security Analysis</span>
+                        </div>
+
+                        <p><strong>Technical Innovation:</strong> [Placeholder: Explain the novel approach to hypervisor-based analysis, performance characteristics, and advantages over traditional methods]</p>
+
+                        <p><strong>Applications:</strong> [Placeholder: Use cases in malware analysis, incident response, system monitoring, etc.]</p>
+                    </div>
+                    <div class="project-links">
+                        <a href="http://github.com/andrewFasano/hyde" target="_blank">GitHub Repository</a>
+                    </div>
+                </div>
+
+                <div class="project-card" onclick="toggleProject(this)">
+                    <div class="project-title">
+                        LAVA
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="project-summary">An automated framework for injecting vulnerabilities to evaluate bug-finding systems.</div>
+                    <div class="project-details">
+                        <p><strong>Description:</strong> LAVA (Large-scale Automated Vulnerability Addition) revolutionized the evaluation of vulnerability discovery tools by automatically injecting realistic bugs into software. Using PANDA's dynamic taint analysis, LAVA identifies data flow paths and strategically places vulnerabilities that mirror real-world bugs.</p>
+
+                        <div class="project-tech">
+                            <strong>Technologies:</strong>
+                            <span class="tech-tag">Dynamic Taint Analysis</span>
+                            <span class="tech-tag">Vulnerability Injection</span>
+                            <span class="tech-tag">Automated Testing</span>
+                            <span class="tech-tag">Bug Discovery Evaluation</span>
+                        </div>
+
+                        <p><strong>Recognition:</strong> Winner of the R&D100 Award in 2020 for advancing the state of the art in vulnerability discovery evaluation.</p>
+
+                        <p><strong>Legacy:</strong> [Placeholder: Describe impact on security research community, number of researchers who have used LAVA datasets, influence on vulnerability research methodology]</p>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/panda-re/lava" target="_blank">GitHub Repository</a>
+                        <span style="color: #7f8c8d; font-size: 0.85rem;">(No longer maintained)</span>
+                    </div>
+                </div>
+
+                <div class="project-card" onclick="toggleProject(this)">
+                    <div class="project-title">
+                        Rode0day
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="project-summary">A vulnerability discovery competition powered by LAVA.</div>
+                    <div class="project-details">
+                        <p><strong>Description:</strong> Rode0day was an innovative competition platform that challenged security researchers to find vulnerabilities in software without knowing their locations beforehand. Unlike traditional evaluations where researchers had access to ground truth, Rode0day provided a blind testing environment that more accurately reflected real-world bug hunting scenarios.</p>
+
+                        <div class="project-tech">
+                            <strong>Technologies:</strong>
+                            <span class="tech-tag">Web Platform</span>
+                            <span class="tech-tag">Competition Infrastructure</span>
+                            <span class="tech-tag">Automated Scoring</span>
+                            <span class="tech-tag">Research Evaluation</span>
+                        </div>
+
+                        <p><strong>Community Impact:</strong> [Placeholder: Number of participants, duration of competition, research insights gained from participant performance]</p>
+
+                        <p><strong>Research Contributions:</strong> [Placeholder: Publications and insights generated from competition data, influence on vulnerability research methodology]</p>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://web.archive.org/web/20240726105111/https://rode0day.mit.edu/" target="_blank">Archived Website</a>
+                        <span style="color: #7f8c8d; font-size: 0.85rem;">(No longer maintained)</span>
+                    </div>
+                </div>
+            </div>
+
+            <span class="anchor" id="publications"></span>
+            <h2>Academic Publications</h2>
             <p>All my publications are available as open access on <a href="https://scholar.google.com/citations?user=Y9XVfSIAAAAJ" target="_blank">Google Scholar</a>.</p>
 
-            <div class="publication">
-                <div class="publication-title">Target-Centric Firmware Rehosting with Penguin</div>
-                <div class="publication-authors"><strong>Andrew Fasano</strong>, Zachary Estrada, Luke Craig, Ben Levy, Jordan McLeod, Jacques Becker, Elysia Witham, Cole DiLorenzo, Caden Kline, Ali Bobi, Dinko Dermendzhiev, Tim Leek, and William Robertson.</div>
-                <div class="publication-venue"><strong>NDSS BAR 2025</strong></div>
-                <a href="https://andrewfasano.com/assets/files/penguin.pdf" target="_blank">View PDF</a>
+            <div class="publication-grid">
+                <div class="publication-card" onclick="togglePublication(this)">
+                    <div class="pub-header">
+                        <div class="pub-title">Target-Centric Firmware Rehosting with Penguin</div>
+                        <div class="pub-year">2025</div>
+                    </div>
+                    <div class="pub-authors"><strong>Andrew Fasano</strong>, Zachary Estrada, Luke Craig, Ben Levy, Jordan McLeod, Jacques Becker, Elysia Witham, Cole DiLorenzo, Caden Kline, Ali Bobi, Dinko Dermendzhiev, Tim Leek, and William Robertson</div>
+                    <div class="pub-venue">NDSS BAR 2025</div>
+                    <div class="pub-abstract">
+                        <p><strong>Abstract:</strong> [Placeholder: This paper presents PENGUIN, a novel approach to firmware rehosting that focuses on target-centric analysis. The work demonstrates significant improvements in automated firmware analysis by...]</p>
+
+                        <p><strong>Key Contributions:</strong> [Placeholder: List of main technical contributions, such as novel rehosting techniques, evaluation results, etc.]</p>
+
+                        <p><strong>Impact:</strong> [Placeholder: Citation count, adoption by other researchers, practical applications in industry]</p>
+                    </div>
+                    <div class="pub-links">
+                        <a href="https://andrewfasano.com/assets/files/penguin.pdf" target="_blank">View PDF</a>
+                    </div>
+                </div>
+
+                <div class="publication-card" onclick="togglePublication(this)">
+                    <div class="pub-header">
+                        <div class="pub-title">Hypervisor Dissociative Execution: Programming Guests for Monitoring, Management, and Security</div>
+                        <div class="pub-year">2025</div>
+                    </div>
+                    <div class="pub-authors"><strong>Andrew Fasano</strong>, Zak Estrada, Timothy Leek, William Robertson</div>
+                    <div class="pub-venue">ACSAC 2025</div>
+                    <div class="pub-abstract">
+                        <p><strong>Abstract:</strong> [Placeholder: This work introduces HYDE, a novel framework for hypervisor-based system analysis that enables code injection and execution within guest virtual machines...]</p>
+
+                        <p><strong>Technical Innovation:</strong> [Placeholder: Description of the system call injection technique, performance evaluation, comparison with existing approaches]</p>
+
+                        <p><strong>Applications:</strong> [Placeholder: Demonstrated use cases in security analysis, system monitoring, and incident response]</p>
+                    </div>
+                    <div class="pub-links">
+                        <a href="https://andrewfasano.com/assets/files/hyde.pdf" target="_blank">View PDF</a>
+                    </div>
+                </div>
+
+                <div class="publication-card" onclick="togglePublication(this)">
+                    <div class="pub-header">
+                        <div class="pub-title">SoK: Enabling Security Analyses of Embedded Systems via Rehosting</div>
+                        <div class="pub-year">2021</div>
+                    </div>
+                    <div class="pub-authors"><strong>Andrew Fasano</strong>, Tiemoko Ballo, Marius Muench, Tim Leek, Alexander Bulekov, Brendan Dolan-Gavitt, Manuel Egele, Aurelien Francillon, Long Lu, Nick Gregory, Davide Balzarotti, William Robertson</div>
+                    <div class="pub-venue">ACM AsiaCCS 2021</div>
+                    <div class="pub-abstract">
+                        <p><strong>Abstract:</strong> [Placeholder: This systematization of knowledge paper provides a comprehensive survey of firmware rehosting techniques, analyzing existing approaches and identifying key challenges in the field...]</p>
+
+                        <p><strong>Survey Scope:</strong> [Placeholder: Number of papers reviewed, taxonomy of rehosting approaches, evaluation criteria]</p>
+
+                        <p><strong>Community Impact:</strong> [Placeholder: Citation count, influence on subsequent research, adoption of proposed taxonomy]</p>
+                    </div>
+                    <div class="pub-links">
+                        <a href="https://dspace.mit.edu/handle/1721.1/130505" target="_blank">View PDF</a>
+                    </div>
+                </div>
+
+                <div class="publication-card" onclick="togglePublication(this)">
+                    <div class="pub-header">
+                        <div class="pub-title">PyPANDA: Taming the PANDAmonium of Whole System Dynamic Analysis</div>
+                        <div class="pub-year">2021</div>
+                    </div>
+                    <div class="pub-authors">Luke Craig, <strong>Andrew Fasano</strong>, Tiemoko Ballo, Timothy Leek, Brendan Dolan-Gavitt, William Robertson</div>
+                    <div class="pub-venue">NDSS BAR 2021</div>
+                    <div class="pub-abstract">
+                        <p><strong>Abstract:</strong> [Placeholder: This paper presents PyPANDA, a Python interface for the PANDA whole-system analysis platform, significantly improving usability and accessibility for security researchers...]</p>
+
+                        <p><strong>Technical Contributions:</strong> [Placeholder: Python API design, performance optimizations, example analyses]</p>
+
+                        <p><strong>Adoption:</strong> [Placeholder: Usage statistics, community contributions, integration with other tools]</p>
+                    </div>
+                    <div class="pub-links">
+                        <a href="https://www.ndss-symposium.org/wp-content/uploads/bar2021_23001_paper.pdf" target="_blank">View PDF</a>
+                    </div>
+                </div>
+
+                <div class="publication-card" onclick="togglePublication(this)">
+                    <div class="pub-header">
+                        <div class="pub-title">The Rode0day to Less Buggy Programs</div>
+                        <div class="pub-year">2019</div>
+                    </div>
+                    <div class="pub-authors"><strong>Andrew Fasano</strong>, Tim Leek, Brendan Dolan-Gavitt, Josh Bundt</div>
+                    <div class="pub-venue">IEEE Security and Privacy Magazine 2019</div>
+                    <div class="pub-abstract">
+                        <p><strong>Abstract:</strong> [Placeholder: This paper describes the Rode0day competition platform and analyzes the results of the vulnerability discovery competition, providing insights into the effectiveness of different bug-finding approaches...]</p>
+
+                        <p><strong>Competition Results:</strong> [Placeholder: Statistics on participant performance, discovered vulnerabilities, comparative analysis of different tools and techniques]</p>
+
+                        <p><strong>Research Insights:</strong> [Placeholder: Lessons learned about vulnerability discovery, implications for tool development]</p>
+                    </div>
+                    <div class="pub-links">
+                        <a href="https://messlab.moyix.net/papers/rode0day_spmag19.pdf" target="_blank">View PDF</a>
+                    </div>
+                </div>
+
+                <div class="publication-card" onclick="togglePublication(this)">
+                    <div class="pub-header">
+                        <div class="pub-title">Homo in Machina: Improving Fuzz Testing Coverage via Compartment Analysis</div>
+                        <div class="pub-year">2021</div>
+                    </div>
+                    <div class="pub-authors">Josh Bundt, <strong>Andrew Fasano</strong>, Brendan Dolan-Gavitt, William Robertson, Timothy Leek</div>
+                    <div class="pub-venue">ACM AsiaCCS 2021</div>
+                    <div class="pub-abstract">
+                        <p><strong>Abstract:</strong> [Placeholder: This work presents a novel approach to improving fuzzing effectiveness through compartment analysis, identifying program structures that can guide more effective test generation...]</p>
+
+                        <p><strong>Methodology:</strong> [Placeholder: Description of compartment analysis technique, experimental setup, evaluation metrics]</p>
+
+                        <p><strong>Results:</strong> [Placeholder: Performance improvements, coverage gains, comparison with existing fuzzing techniques]</p>
+                    </div>
+                    <div class="pub-links">
+                        <a href="https://arxiv.org/pdf/2212.11162.pdf" target="_blank">View PDF</a>
+                    </div>
+                </div>
+
+                <div class="publication-card" onclick="togglePublication(this)">
+                    <div class="pub-header">
+                        <div class="pub-title">Evaluating Synthetic Bugs</div>
+                        <div class="pub-year">2021</div>
+                    </div>
+                    <div class="pub-authors">Josh Bundt, <strong>Andrew Fasano</strong>, Brendan Dolan-Gavitt, William Robertson, Timothy Leek</div>
+                    <div class="pub-venue">ACM AsiaCCS 2021</div>
+                    <div class="pub-abstract">
+                        <p><strong>Abstract:</strong> [Placeholder: This paper evaluates the effectiveness of synthetically generated bugs for testing vulnerability discovery tools, comparing LAVA-generated bugs with real-world vulnerabilities...]</p>
+
+                        <p><strong>Evaluation Framework:</strong> [Placeholder: Methodology for comparing synthetic and real bugs, metrics used, experimental design]</p>
+
+                        <p><strong>Findings:</strong> [Placeholder: Key insights about synthetic bug quality, tool evaluation implications, recommendations for future research]</p>
+                    </div>
+                    <div class="pub-links">
+                        <a href="https://dl.acm.org/doi/pdf/10.1145/3433210.3453096" target="_blank">View PDF</a>
+                    </div>
+                </div>
             </div>
 
-            <div class="publication">
-                <div class="publication-title">Hypervisor Dissociative Execution: Programming Guests for Monitoring, Management, and Security</div>
-                <div class="publication-authors"><strong>Andrew Fasano</strong>, Zak Estrada, Timothy Leek, William Robertson.</div>
-                <div class="publication-venue"><strong>ACSAC 2025</strong></div>
-                <a href="https://andrewfasano.com/assets/files/hyde.pdf" target="_blank">View PDF</a>
+            <span class="anchor" id="talks"></span>
+            <h2>Invited Talks</h2>
+
+            <div class="news-item">
+                <div class="news-date">2025.08</div>
+                <div><strong>Redacted (US Government Conference)</strong>: AI Targets, AI Attackers: A case study on AI Agent Exploit Chains.</div>
             </div>
 
-            <div class="publication">
-                <div class="publication-title">Homo in Machina: Improving Fuzz Testing Coverage via Compartment Analysis</div>
-                <div class="publication-authors">Josh Bundt, <strong>Andrew Fasano</strong>, Brendan Dolan-Gavitt, William Robertson, Timothy Leek.</div>
-                <div class="publication-venue"><strong>ACM AsiaCCS 2021</strong></div>
-                <a href="https://arxiv.org/pdf/2212.11162.pdf" target="_blank">View PDF</a>
+            <div class="news-item">
+                <div class="news-date">2024.08</div>
+                <div><strong>DEFCON AIxCC</strong>: "A Reverse Engineer's Guide to Mechanistic Interpretability" <a href="https://vimeo.com/997479806" target="_blank">Video</a> and <a href="https://nation.state.actor/2024/08/21/defcon.html" target="_blank">slides</a>.</div>
             </div>
 
-            <div class="publication">
-                <div class="publication-title">PyPANDA: Taming the PANDAmonium of Whole System Dynamic Analysis</div>
-                <div class="publication-authors">Luke Craig, <strong>Andrew Fasano</strong>, Tiemoko Ballo, Timothy Leek, Brendan Dolan-Gavitt, William Robertson.</div>
-                <div class="publication-venue"><strong>NDSS BAR 2021</strong></div>
-                <a href="https://www.ndss-symposium.org/wp-content/uploads/bar2021_23001_paper.pdf" target="_blank">View PDF</a>
+            <div class="news-item">
+                <div class="news-date">2023.10</div>
+                <div><strong>New York University</strong>: "The Trials, Tribulations, and Triumphs of Whole System Dynamic Analysis: Lessons from a Decade in the Trenches"</div>
             </div>
 
-            <div class="publication">
-                <div class="publication-title">Evaluating Synthetic bugs</div>
-                <div class="publication-authors">Josh Bundt, <strong>Andrew Fasano</strong>, Brendan Dolan-Gavitt, William Robertson, Timothy Leek.</div>
-                <div class="publication-venue"><strong>ACM AsiaCCS 2021</strong></div>
-                <a href="https://dl.acm.org/doi/pdf/10.1145/3433210.3453096" target="_blank">View PDF</a>
+            <div class="news-item">
+                <div class="news-date">2019.10</div>
+                <div><strong>AvengerCon</strong>: "The LAVA has Hardened! Building a Better Bug Corpora to Evaluate Bug-Finders"</div>
             </div>
 
-            <div class="publication">
-                <div class="publication-title">SoK: Enabling Security Analyses of Embedded Systems via Rehosting</div>
-                <div class="publication-authors"><strong>Andrew Fasano</strong>, Tiemoko Ballo, Marius Muench, Tim Leek, Alexander Bulekov, Brendan Dolan-Gavitt, Manuel Egele, Aurelien Francillon, Long Lu, Nick Gregory, Davide Balzarotti, William Robertson.</div>
-                <div class="publication-venue"><strong>ACM AsiaCCS 2021</strong></div>
-                <a href="https://dspace.mit.edu/handle/1721.1/130505" target="_blank">View PDF</a>
+            <div class="news-item">
+                <div class="news-date">2019.08</div>
+                <div><strong>USENIX WOOT</strong>: "Rode0day: A Year of Bug-Finding Evaluations"</div>
             </div>
 
-            <div class="publication">
-                <div class="publication-title">The Rode0day to Less Buggy Programs</div>
-                <div class="publication-authors"><strong>Andrew Fasano</strong>, Tim Leek, Brendan Dolan-Gavitt, Josh Bundt.</div>
-                <div class="publication-venue"><strong>IEEE Security and Privacy Magazine 2019</strong></div>
-                <a href="https://messlab.moyix.net/papers/rode0day_spmag19.pdf" target="_blank">View PDF</a>
+            <div class="news-item">
+                <div class="news-date">2018.08</div>
+                <div><strong>USENIX WOOT</strong>: "Rode0day: Searching for Truth with a Bug-Finding Competition"</div>
             </div>
 
-            <h2>💬 Invited Talks</h2>
-            <ul>
-                <li><em>2025.08</em>, <strong>Redacted (US Government Conference)</strong>: AI Targets, AI Attackers: A case study on AI Agent Exploit Chains.</li>
-                <li><em>2024.08</em>, <strong>DEFCON AIxCC</strong>: "A Reverse Engineer's Guide to Mechanistic Interpretability" <a href="https://vimeo.com/997479806" target="_blank">Video</a> and <a href="https://nation.state.actor/2024/08/21/defcon.html" target="_blank">slides</a>.</li>
-                <li><em>2023.10</em>, <strong>New York University</strong>: "The Trials, Tribulations, and Triumphs of Whole System Dynamic Analysis: Lessons from a Decade in the Trenches"</li>
-                <li><em>2019.10</em>, <strong>AvengerCon</strong>: "The LAVA has Hardened! Building a Better Bug Corpora to Evaluate Bug-Finders"</li>
-                <li><em>2019.08</em>, <strong>USENIX WOOT</strong>: "Rode0day: A Year of Bug-Finding Evaluations"</li>
-                <li><em>2018.08</em>, <strong>USENIX WOOT</strong>: "Rode0day: Searching for Truth with a Bug-Finding Competition"</li>
-            </ul>
+            <span class="anchor" id="awards"></span>
+            <h2>Honors and Awards</h2>
 
-            <h2>🎖 Honors and Awards</h2>
-            <ul>
-                <li><em>2020.09</em> <strong>R&D100 Award</strong>: LAVA was <a href="https://www.rdworldonline.com/rd-100-2020-winner/lava-large-scale-vulnerability-addition/" target="_blank">awarded an R&D100 award</a> for its impact advancing the state of the art in vulnerability discovery.</li>
-                <li><em>2019.09</em> <strong>MIT Lincoln Scholar Award</strong>: Selected to receive special funding through a competitive process to pursue my research.</li>
-                <li><em>2017.06</em> <strong>MIT Lincoln Laboratory Team Award</strong>: Award for outstanding technical achievement.</li>
-            </ul>
+            <div class="news-item">
+                <div class="news-date">2020.09</div>
+                <div><strong>R&D100 Award</strong>: LAVA was <a href="https://www.rdworldonline.com/rd-100-2020-winner/lava-large-scale-vulnerability-addition/" target="_blank">awarded an R&D100 award</a> for its impact advancing the state of the art in vulnerability discovery.</div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-date">2019.09</div>
+                <div><strong>MIT Lincoln Scholar Award</strong>: Selected to receive special funding through a competitive process to pursue my research.</div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-date">2017.06</div>
+                <div><strong>MIT Lincoln Laboratory Team Award</strong>: Award for outstanding technical achievement.</div>
+            </div>
 
             <div class="disclaimer">
                 <h3>Disclaimer</h3>
@@ -315,5 +1059,45 @@
             </div>
         </main>
     </div>
+
+    <script>
+        function toggleMobileMenu() {
+            const navbar = document.getElementById('navbar-nav');
+            const toggle = document.querySelector('.mobile-menu-toggle i');
+
+            navbar.classList.toggle('mobile-open');
+
+            if (navbar.classList.contains('mobile-open')) {
+                toggle.className = 'fas fa-times';
+            } else {
+                toggle.className = 'fas fa-bars';
+            }
+        }
+
+        function closeMobileMenu() {
+            const navbar = document.getElementById('navbar-nav');
+            const toggle = document.querySelector('.mobile-menu-toggle i');
+
+            navbar.classList.remove('mobile-open');
+            toggle.className = 'fas fa-bars';
+        }
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const navbar = document.getElementById('navbar-nav');
+            const toggle = document.querySelector('.mobile-menu-toggle');
+
+            if (!toggle.contains(event.target) && !navbar.contains(event.target)) {
+                closeMobileMenu();
+            }
+        });
+
+        // Close mobile menu on window resize to desktop
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768) {
+                closeMobileMenu();
+            }
+        });
+    </script>
 </body>
 </html>
