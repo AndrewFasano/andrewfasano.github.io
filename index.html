@@ -513,6 +513,10 @@
             z-index: 10;
         }
 
+        .project-section.expanded::before {
+            content: "Click to collapse";
+        }
+
         .project-section.expandable.expanded::before {
             content: "Click to collapse";
         }
@@ -547,6 +551,22 @@
             margin: 0;
             font-size: 1.5rem;
             color: #2c3e50;
+            position: relative;
+        }
+
+        .project-header h3::after {
+            content: '🔗';
+            position: absolute;
+            right: -30px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.8rem;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+
+        .project-section:hover .project-header h3::after {
+            opacity: 0.4;
         }
 
 
@@ -808,10 +828,21 @@
         function toggleProjectDetails(element) {
             element.classList.toggle('expanded');
             const content = element.querySelector('.project-content');
-            if (content.style.display === 'none') {
+            const isExpanding = content.style.display === 'none';
+
+            if (isExpanding) {
                 content.style.display = 'block';
+                // Update URL to include project hash
+                if (element.id) {
+                    history.pushState(null, null, '#' + element.id);
+                }
             } else {
                 content.style.display = 'none';
+                // Remove project hash from URL, keep other hashes
+                const currentHash = window.location.hash;
+                if (currentHash === '#' + element.id) {
+                    history.pushState(null, null, window.location.pathname + '#projects');
+                }
             }
         }
 
@@ -923,6 +954,36 @@
             }
         }
 
+        function expandProjectFromHash() {
+            const hash = window.location.hash;
+            if (hash.startsWith('#project-')) {
+                const projectElement = document.querySelector(hash);
+                if (projectElement) {
+                    // Show hidden projects if needed
+                    const hiddenProjects = document.querySelector('.projects-hidden');
+                    if (hiddenProjects && hiddenProjects.contains(projectElement)) {
+                        hiddenProjects.style.display = 'block';
+                        const showMoreBtn = document.querySelector('.show-more-btn');
+                        if (showMoreBtn) {
+                            showMoreBtn.textContent = 'Show Fewer Projects';
+                        }
+                    }
+
+                    // Expand the project
+                    const content = projectElement.querySelector('.project-content');
+                    if (content && content.style.display === 'none') {
+                        projectElement.classList.add('expanded');
+                        content.style.display = 'block';
+                    }
+
+                    // Scroll to project with slight delay to ensure expansion
+                    setTimeout(() => {
+                        projectElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }, 100);
+                }
+            }
+        }
+
         document.addEventListener('DOMContentLoaded', function() {
             const navLinks = document.querySelectorAll('.navbar-nav a');
             navLinks.forEach(link => {
@@ -949,13 +1010,17 @@
                     }
                 });
             });
+
+            // Handle hash changes and initial load
+            expandProjectFromHash();
+            window.addEventListener('hashchange', expandProjectFromHash);
         });
     </script>
 </head>
 <body>
     <nav class="navbar">
         <div class="navbar-content">
-            <a href="#" class="navbar-brand">Andrew Fasano</a>
+            <a href="#" class="navbar-brand">Andrew Fasano, PhD</a>
             <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
                 <i class="fas fa-bars"></i>
             </button>
@@ -972,7 +1037,7 @@
     <div class="container">
         <aside class="sidebar">
             <img src="images/af.jpg" alt="Andrew Fasano" class="profile-img">
-            <h1>Dr. Andrew Fasano</h1>
+            <h1>Andrew Fasano, PhD</h1>
             <div class="bio">United States Center for AI Standards and Innovation (CAISI)<br><small style="color: #888; font-size: 0.85em; font-style: normal;">Formerly the US AI Safety Institute</small></div>
             <div class="location"><i class="fas fa-map-marker-alt"></i> San Francisco, CA</div>
 
@@ -996,7 +1061,7 @@
             <p>I earned my PhD in Computer Science from Northeastern University and BS from Rensselaer Polytechnic Institute, where I was an active member of <a href="https://rpis.ec" target="_blank">RPISEC</a> and its cyber Capture the Flag (CTF) team. I'm also passionate about cybersecurity education, having developed courses for universities, government agencies, and private companies. The materials from my <em>System Security with Dynamic Program Analysis</em> course are <a href="https://github.com/andrewFasano/dpa" target="_blank">publicly available</a>.</p>
 
             <span class="anchor" id="news"></span>
-            <h2>News</h2>
+            <h2><a href="#news" style="color: inherit; text-decoration: none;">News</a></h2>
 
             <div class="news-item">
                 <div class="news-date">2025.09</div>
@@ -1031,14 +1096,14 @@
             </div>
 
             <span class="anchor" id="projects"></span>
-            <h2>Select Projects and Publications</h2>
+            <h2><a href="#projects" style="color: inherit; text-decoration: none;">Select Projects and Publications</a></h2>
 
             <div class="projects-container">
                 <div id="filter-info" class="filter-info" style="display: none;">
                     Showing projects with tag: <strong id="active-filter"></strong>
                     <button class="clear-filter" onclick="clearTagFilter()">Clear filter</button>
                 </div>
-                <div class="project-section expandable" onclick="toggleProjectDetails(this)">
+                <div id="project-penguin" class="project-section expandable" onclick="toggleProjectDetails(this)">
                     <div class="project-header">
                         <h3>PENGUIN</h3>
                     </div>
@@ -1060,12 +1125,12 @@
 
                         <p><strong>Solution:</strong> PENGUIN provides a configurable interface for constructing a firmware rehosting environment paired with a suite of analyses to dynamically construct and refine this environment through dynamic analysis. PENGUIN enables large-scale security analysis of firmware code by iteratively building high-quality rehosting environments, sufficient for complex security analyses.</p>
 
-                        <p><strong>Tech Stack</strong> Multi-repo CI/CD with multi-stage Docker builds on Ubuntu 22.04; Rust and Python packages; custom linux kernels, emulators, and guest utilities; cross-compilation toolchains and multi-architecture support (ARM, MIPS, PowerPC, RISC-V); integrated firmware analysis and rehosting libraries.</p>
+                        <p><strong>Tech Stack:</strong> Multi-repo CI/CD with multi-stage Docker builds on Ubuntu 22.04; Rust and Python packages; custom linux kernels, emulators, and guest utilities; cross-compilation toolchains and multi-architecture support (ARM, MIPS, PowerPC, RISC-V); integrated firmware analysis and rehosting libraries.</p>
 
                         <div class="project-subsection">
                             <h4>Publication</h4>
                             <div class="publication">
-                                <div class="publication-title">"PENGUIN: Target-Centric Firmware Rehosting"</div>
+                                <div class="publication-title">PENGUIN: Target-Centric Firmware Rehosting</div>
                                 <div class="publication-authors"><strong>Andrew Fasano</strong>, Zachary Estrada, Luke Craig, Ben Levy, Jordan McLeod, Jacques Becker, Elysia Witham, Cole DiLorenzo, Caden Kline, Ali Bobi, Dinko Dermendzhiev, Tim Leek, William (Wil) Robertson</div>
                                 <div class="publication-venue">NDSS Binary Analysis Workshop 2025</div>
                             </div>
@@ -1078,7 +1143,7 @@
                     </div>
                 </div>
 
-                <div class="project-section expandable" onclick="toggleProjectDetails(this)">
+                <div id="project-hyde" class="project-section expandable" onclick="toggleProjectDetails(this)">
                     <div class="project-header">
                         <h3>HYDE</h3>
                     </div>
@@ -1104,7 +1169,7 @@
                         <div class="project-subsection">
                             <h4>Publication</h4>
                             <div class="publication">
-                                <div class="publication-title">"HyDE: Hypervisor Dissociative Execution"</div>
+                                <div class="publication-title">HyDE: Hypervisor Dissociative Execution</div>
                                 <div class="publication-authors"><strong>Andrew Fasano</strong>, Zak Estrada, Timothy Leek, William Robertson</div>
                                 <div class="publication-venue">Annual Computer Security Applications Conference 2024</div>
                             </div>
@@ -1118,7 +1183,7 @@
                 </div>
 
                 <div class="projects-hidden" style="display: none;">
-                <div class="project-section expandable" onclick="toggleProjectDetails(this)">
+                <div id="project-rode0day" class="project-section expandable" onclick="toggleProjectDetails(this)">
                     <div class="project-header">
                         <h3>Rode0day &amp; LAVA</h3>
                     </div>
@@ -1140,17 +1205,17 @@
 
                         <p><strong>Solution:</strong> LAVA (Large-scale Automated Vulnerability Addition) uses dynamic taint tracking, program rewriting, and automated hypothesis testing to create a continuous stream of realistic vulnerabilities in real-world software. Building on LAVA, the Rode0day competition challenged participants to find previously-unseen vulnerabilities generated by LAVA, providing a reproducible platform for evaluating vulnerability discovery tools. LAVA was <a href="https://www.rdworldonline.com/rd-100-2020-winner/lava-large-scale-vulnerability-addition/" target="_blank">awarded an R&D 100 Award</a> in 2020 for its impact on the field of vulnerability discovery evaluation.</p>
 
-                        <p><strong>Tech Stack:</strong>Dynamic taint analysis tracking with PANDA.re paired with LLVM-IR based source level transformations to map dynamic taint information back to source code locations. Flask-based web application with extensive sandboxing to manage user submissions; distributed fuzzing campaigns across a Slurm-based HPC cluster using Singularity containers; </p>
+                        <p><strong>Tech Stack:</strong> Dynamic taint analysis tracking with PANDA.re paired with LLVM-IR based source level transformations to map dynamic taint information back to source code locations. Flask-based web application with extensive sandboxing to manage user submissions; distributed fuzzing campaigns across a Slurm-based HPC cluster using Singularity containers; </p>
 
                         <div class="project-subsection">
                             <h4>Publications</h4>
                             <div class="publication">
-                                <div class="publication-title">"Evaluating Synthetic Bugs"</div>
+                                <div class="publication-title">Evaluating Synthetic Bugs</div>
                                 <div class="publication-authors">Joshua Bundt, <strong>Andrew Fasano</strong>, Brendan Dolan-Gavitt, William Robertson, Timothy Leek</div>
                                 <div class="publication-venue">ACM AsiaCCS 2021</div>
                             </div>
                             <div class="publication">
-                                <div class="publication-title">"The Rode0day to Less-Buggy Programs"</div>
+                                <div class="publication-title">The Rode0day to Less-Buggy Programs</div>
                                 <div class="publication-authors"><strong>Andrew Fasano</strong>, Tim Leek, Brendan Dolan-Gavitt, Josh Bundt</div>
                                 <div class="publication-venue">IEEE Security and Privacy Magazine 2019</div>
                             </div>
@@ -1165,7 +1230,7 @@
                     </div>
                 </div>
 
-                <div class="project-section expandable" onclick="toggleProjectDetails(this)">
+                <div id="project-panda" class="project-section expandable" onclick="toggleProjectDetails(this)">
                     <div class="project-header">
                         <h3>PANDA.re</h3>
                     </div>
@@ -1188,14 +1253,14 @@
 
                         <p><strong>Solution:</strong> PANDA.re extends the QEMU emulator to provide a platform for whole-system dynamic analysis with low-level callbacks, deterministic record/replay, and a rich plugin ecosystem. PANDA plugins implement complex virtual machine inrospection capabilities to recover high-level abstractions from low-level events, track data flow through memory and registers, and analyze system behavior in real time. Through its Python inerface, PANDA allows researchers to simultaneously orchestrate the guest system and implement complex analyses.</p>
 
-                        <p><strong>Tech Stack:</strong>Large (over 1.5M lines of code) C/C++ codebase customizing QEMU to add support for tracking low-level hardware events, plugin system, and Python3 bindings; C/C++/Python/Rust plugins for dynamic taint analysis, syscall tracing, OS introspection, and more; GitHub actions for CI/CD releases to DockerHub and PyPi.</p>
+                        <p><strong>Tech Stack:</strong> Large (over 1.5M lines of code) C/C++ codebase customizing QEMU to add support for tracking low-level hardware events, plugin system, and Python3 bindings; C/C++/Python/Rust plugins for dynamic taint analysis, syscall tracing, OS introspection, and more; GitHub actions for CI/CD releases to DockerHub and PyPi.</p>
 
                         <p><strong>Contribution note:</strong> I served as the maintainer of PANDA.re from 2020-2024, during which time I expanded the platform to support new guest architectures, new analysis capabilities, and upgraded to a modern CI/CD pipeline. I expanded core plugins including the Linux virtual machine introspection system (VMI) to support additional architectures. I developed and delivered a number of training courses on PANDA.re, and helped onboard new users to the platform while growing the open-source community around the project. PANDA.re is developed by a large team of contributors and this work would not have been possible without their significant efforts!</p>
 
                         <div class="project-subsection">
                             <h4>Publication</h4>
                             <div class="publication">
-                                <div class="publication-title">"PyPANDA: Taming the Pandamonium of Whole System Dynamic Analysis"</div>
+                                <div class="publication-title">PyPANDA: Taming the Pandamonium of Whole System Dynamic Analysis</div>
                                 <div class="publication-authors">Luke Craig, <strong>Andrew Fasano</strong>, Tiemoko Ballo, Timothy Leek, Brendan Dolan-Gavitt, William Robertson</div>
                                 <div class="publication-venue">NDSS BAR 2021</div>
                             </div>
@@ -1209,7 +1274,7 @@
                     </div>
                 </div>
 
-                <div class="project-section expandable" onclick="toggleProjectDetails(this)">
+                <div id="project-sok-firmware" class="project-section expandable" onclick="toggleProjectDetails(this)">
                     <div class="project-header">
                         <h3>SoK: Firmware Rehosting</h3>
                     </div>
@@ -1231,7 +1296,7 @@
                         <div class="project-subsection">
                             <h4>Publication</h4>
                             <div class="publication">
-                                <div class="publication-title">"SoK: Enabling Security Analyses of Embedded Systems via Rehosting"</div>
+                                <div class="publication-title">SoK: Enabling Security Analyses of Embedded Systems via Rehosting</div>
                                 <div class="publication-authors"><strong>Andrew Fasano</strong>, Tiemoko Ballo, Marius Muench, Tim Leek, Alexander Bulekov, Brendan Dolan-Gavitt, Manuel Egele, Aurelien Francillon, Long Lu, Nick Gregory, Davide Balzarotti, William Robertson</div>
                                 <div class="publication-venue">ASIACCS 2021</div>
                             </div>
@@ -1243,7 +1308,7 @@
                     </div>
                 </div>
 
-                <div class="project-section expandable" onclick="toggleProjectDetails(this)">
+                <div id="project-homo-in-machina" class="project-section expandable" onclick="toggleProjectDetails(this)">
                     <div class="project-header">
                         <h3>Homo in Machina</h3>
                     </div>
@@ -1266,7 +1331,7 @@
                         <div class="project-subsection">
                             <h4>Publication</h4>
                             <div class="publication">
-                                <div class="publication-title">"Homo in Machina: Human Guidance for Fuzzing"</div>
+                                <div class="publication-title">Homo in Machina: Human Guidance for Fuzzing</div>
                                 <div class="publication-authors">Josh Bundt, <strong>Andrew Fasano</strong>, Brendan Dolan-Gavitt, William Robertson, Timothy Leek</div>
                                 <div class="publication-venue">2023 IEEE Conference on Software Testing, Verification and Validation</div>
                             </div>
@@ -1286,7 +1351,7 @@
 
 
             <span class="anchor" id="talks"></span>
-            <h2>Invited Talks</h2>
+            <h2><a href="#talks" style="color: inherit; text-decoration: none;">Invited Talks</a></h2>
 
             <div class="news-item">
                 <div class="news-date">2025.08</div>
@@ -1319,7 +1384,7 @@
             </div>
 
             <span class="anchor" id="awards"></span>
-            <h2>Honors and Awards</h2>
+            <h2><a href="#awards" style="color: inherit; text-decoration: none;">Honors and Awards</a></h2>
 
             <div class="news-item">
                 <div class="news-date">2020.09</div>
