@@ -456,7 +456,7 @@
 
         .project-section {
             border: 1px solid #e1e8ed;
-            border-radius: 8px;
+            border-radius: 2px;
             padding: 2rem;
             background: #fafbfc;
             margin-bottom: 2rem;
@@ -471,16 +471,18 @@
         .project-section.expandable::before {
             content: "Click to expand";
             position: absolute;
-            bottom: 1rem;
+            top: 1rem;
             right: 1rem;
-            background: rgba(52, 152, 219, 0.1);
-            color: #3498db;
-            padding: 0.3rem 0.6rem;
-            border-radius: 12px;
-            font-size: 0.75rem;
+            background: #f8f9fa;
+            color: #666;
+            border: 1px solid #e9ecef;
+            padding: 0.25rem 0.5rem;
+            border-radius: 2px;
+            font-size: 0.7rem;
             font-weight: 500;
-            opacity: 0.7;
+            opacity: 0.8;
             transition: all 0.2s ease;
+            z-index: 10;
         }
 
         .project-section.expandable.expanded::before {
@@ -494,7 +496,8 @@
 
         .project-section.expandable:hover::before {
             opacity: 1;
-            background: rgba(52, 152, 219, 0.15);
+            background: #e9ecef;
+            color: #333;
         }
 
         .project-section.expanded {
@@ -509,6 +512,7 @@
             margin-bottom: 1rem;
             flex-wrap: wrap;
             gap: 1rem;
+            padding-right: 120px;
         }
 
         .project-header h3 {
@@ -517,34 +521,6 @@
             color: #2c3e50;
         }
 
-        .project-type-badge {
-            display: inline-block;
-            padding: 0.25rem 0.6rem;
-            border-radius: 12px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            margin-bottom: 0.8rem;
-        }
-
-        .badge-open-source {
-            background: #27ae60;
-            color: white;
-        }
-
-        .badge-publication {
-            background: #3498db;
-            color: white;
-        }
-
-        .badge-award {
-            background: #f39c12;
-            color: white;
-        }
-
-        .badge-both {
-            background: linear-gradient(135deg, #3498db 0%, #27ae60 100%);
-            color: white;
-        }
 
         .project-summary {
             color: #555;
@@ -588,8 +564,9 @@
             margin: 1rem 0;
             display: flex;
             flex-wrap: wrap;
-            gap: 0.5rem;
-            align-items: center;
+            gap: 0.4rem;
+            align-items: flex-start;
+            line-height: 1.2;
         }
 
         @media (max-width: 768px) {
@@ -603,29 +580,33 @@
             background: #f8f9fa;
             color: #6c757d;
             border: 1px solid #e9ecef;
-            padding: 0.25rem 0.7rem;
-            border-radius: 16px;
-            font-size: 0.8rem;
+            padding: 0.2rem 0.5rem;
+            border-radius: 3px;
+            font-size: 0.75rem;
             font-weight: 500;
             transition: all 0.2s ease;
+            white-space: nowrap;
+            flex-shrink: 0;
         }
 
         .tech-tag.primary {
-            background: #f8f9fa;
-            color: #6c757d;
-            border-color: #e9ecef;
+            background: #e3f2fd;
+            color: #1976d2;
+            border-color: #90caf9;
         }
 
-        .tech-tag.language {
-            background: #f8f9fa;
-            color: #6c757d;
-            border-color: #e9ecef;
-        }
-
-        .tech-tag.tool {
-            background: #f8f9fa;
-            color: #6c757d;
-            border-color: #e9ecef;
+        .lang-tag {
+            display: inline-block;
+            background: #f3e5f5;
+            color: #7b1fa2;
+            border: 1px solid #ce93d8;
+            padding: 0.2rem 0.5rem;
+            border-radius: 3px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+            flex-shrink: 0;
         }
 
         .project-links {
@@ -665,7 +646,7 @@
             color: white;
             border: none;
             padding: 0.8rem 2rem;
-            border-radius: 6px;
+            border-radius: 2px;
             font-size: 0.9rem;
             font-weight: 600;
             cursor: pointer;
@@ -699,7 +680,7 @@
 
         .publication-card {
             border: 1px solid #e1e8ed;
-            border-radius: 8px;
+            border-radius: 2px;
             padding: 1.5rem;
             background: #fafbfc;
             transition: all 0.2s ease;
@@ -907,15 +888,19 @@
             <div class="projects-container">
                 <div class="project-section expandable" onclick="toggleProjectDetails(this)">
                     <div class="project-header">
-                        <h3>PENGUIN <span class="expand-icon">▼</span></h3>
-                        <div class="project-type-badge badge-both">📄🔓 Publication + Open Source</div>
+                        <h3>PENGUIN</h3>
                     </div>
                     <div class="project-summary">Dynamically constructing analysis environments for firmware code on demand. PENGUIN's novel approach enables dynamic security testing of firmware at scale, without any specialized hardware.</div>
                     <div class="project-tech">
                         <span class="tech-tag primary">Embedded Systems</span>
                         <span class="tech-tag">Dynamic Analysis</span>
                         <span class="tech-tag">CI/CD</span>
-                        <span class="tech-tag language">Python, C</span>
+                        <span class="tech-tag">QEMU</span>
+                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">Multi-arch</span>
+                        <span class="lang-tag">Python</span>
+                        <span class="lang-tag">C</span>
+                        <span class="lang-tag">Rust</span>
                     </div>
 
                     <div class="project-content" style="display: none;">
@@ -927,11 +912,11 @@
 
                         <div class="project-subsection">
                             <h4>Publication</h4>
-                            <ul>
-                                <li><strong>"PENGUIN: Target-Centric Firmware Rehosting"</strong></li>
-                                <li>NDSS Binary Analysis Workshop  2025<br></li>
-                                <li><strong>Andrew Fasano</strong>, Zachary Estrada, Luke Craig, Ben Levy, Jordan McLeod, Jacques Becker, Elysia Witham, Cole DiLorenzo, Caden Kline, Ali Bobi, Dinko Dermendzhiev, Tim Leek, William (Wil) Robertson</li>
-                            </ul>
+                            <div class="publication">
+                                <div class="publication-title">"PENGUIN: Target-Centric Firmware Rehosting"</div>
+                                <div class="publication-authors"><strong>Andrew Fasano</strong>, Zachary Estrada, Luke Craig, Ben Levy, Jordan McLeod, Jacques Becker, Elysia Witham, Cole DiLorenzo, Caden Kline, Ali Bobi, Dinko Dermendzhiev, Tim Leek, William (Wil) Robertson</div>
+                                <div class="publication-venue">NDSS Binary Analysis Workshop 2025</div>
+                            </div>
                         </div>
 
                         <div class="project-links">
@@ -943,8 +928,7 @@
 
                 <div class="project-section expandable" onclick="toggleProjectDetails(this)">
                     <div class="project-header">
-                        <h3>HYDE <span class="expand-icon">▼</span></h3>
-                        <div class="project-type-badge badge-both">📄🔓 Publication + Open Source</div>
+                        <h3>HYDE</h3>
                     </div>
                     <div class="project-summary">Injecting new logic into a running virtual machine from the hypervisor. Hypervisor Dissociative Execution (HyDE) enables cloud providers to offer new monitoring, management, and security services for any Linux VM without installing specialized software.</div>
 
@@ -952,8 +936,11 @@
                         <span class="tech-tag primary">Hypervisors</span>
                         <span class="tech-tag">Kernel Programming</span>
                         <span class="tech-tag">OS internals</span>
-                        <span class="tech-tag">Proof of Concept</span>
-                        <span class="tech-tag language">C++20 and x86 assembly</span>
+                        <span class="tech-tag">QEMU/KVM</span>
+                        <span class="tech-tag">System Calls</span>
+                        <span class="tech-tag">Cloud Security</span>
+                        <span class="lang-tag">C++</span>
+                        <span class="lang-tag">Assembly</span>
                     </div>
 
                     <div class="project-content" style="display: none;">
@@ -964,12 +951,12 @@
                         <p><strong>Tech Stack:</strong> QEMU/KVM-based hypervisor with customizations in both user- and kernel-space; C++ software development kit to enable users to create their own HyDE programs as asynchronous coroutines; C++ runtime for tracking guest state and managing active HyDE programs.</p>
 
                         <div class="project-subsection">
-                            <h4>Publications</h4>
-                            <ul>
-                                <li><strong>"HyDE: Hypervisor Dissociative Execution"</strong>
-                                <li>Annual Computer Security Applications Conference 2024</li>
-                                <li><strong>Andrew Fasano</strong>, Zak Estrada, Timothy Leek, William Robertson</li>
-                            </ul>
+                            <h4>Publication</h4>
+                            <div class="publication">
+                                <div class="publication-title">"HyDE: Hypervisor Dissociative Execution"</div>
+                                <div class="publication-authors"><strong>Andrew Fasano</strong>, Zak Estrada, Timothy Leek, William Robertson</div>
+                                <div class="publication-venue">Annual Computer Security Applications Conference 2024</div>
+                            </div>
                         </div>
 
                         <div class="project-links">
@@ -982,8 +969,7 @@
                 <div class="projects-hidden" style="display: none;">
                 <div class="project-section expandable" onclick="toggleProjectDetails(this)">
                     <div class="project-header">
-                        <h3>Rode0day &amp; LAVA <span class="expand-icon">▼</span></h3>
-                        <div class="project-type-badge badge-both">📄🔓 Publication + Open Source</div>
+                        <h3>Rode0day &amp; LAVA</h3>
                     </div>
                     <div class="project-summary">LAVA automatically injects realistic vulnerabilities into software for evaluation; The Rode0day competition used these to evaluate tools and approaches to vulnerability discovery.</div>
 
@@ -991,7 +977,11 @@
                         <span class="tech-tag primary">Cyber Evaluations</span>
                         <span class="tech-tag">Dynamic Taint Analysis</span>
                         <span class="tech-tag">Synthetic Data Generation</span>
-                        <span class="tech-tag language">C++ and Python</span>
+                        <span class="tech-tag">LLVM</span>
+                        <span class="tech-tag">Fuzzing</span>
+                        <span class="tech-tag">HPC/Slurm</span>
+                        <span class="lang-tag">C++</span>
+                        <span class="lang-tag">Python</span>
                     </div>
 
                     <div class="project-content" style="display: none;">
@@ -1003,16 +993,16 @@
 
                         <div class="project-subsection">
                             <h4>Publications</h4>
-                            <ul>
-                                <li><strong>Evaluating Synthetic Bugs</strong></li>
-                                <li>ACM AsiaCCS 2021</li>
-                                <li>Joshua Bundt, <strong>Andrew Fasano</strong>, Brendan Dolan-Gavitt, William Robertson, Timothy Leek</li>
-
-                                <!-- Two publications for this one! -->
-                                <li><strong>"The Rode0day to Less-Buggy Programs"</strong></li>
-                                <li>IEEE Security and Privacy Magazine 2019</li>
-                                <li><strong>Andrew Fasano</strong>, Tim Leek, Brendan Dolan-Gavitt, Josh Bundt</li>
-                            </ul>
+                            <div class="publication">
+                                <div class="publication-title">"Evaluating Synthetic Bugs"</div>
+                                <div class="publication-authors">Joshua Bundt, <strong>Andrew Fasano</strong>, Brendan Dolan-Gavitt, William Robertson, Timothy Leek</div>
+                                <div class="publication-venue">ACM AsiaCCS 2021</div>
+                            </div>
+                            <div class="publication">
+                                <div class="publication-title">"The Rode0day to Less-Buggy Programs"</div>
+                                <div class="publication-authors"><strong>Andrew Fasano</strong>, Tim Leek, Brendan Dolan-Gavitt, Josh Bundt</div>
+                                <div class="publication-venue">IEEE Security and Privacy Magazine 2019</div>
+                            </div>
                         </div>
 
                         <div class="project-links">
@@ -1026,8 +1016,7 @@
 
                 <div class="project-section expandable" onclick="toggleProjectDetails(this)">
                     <div class="project-header">
-                        <h3>PANDA.re <span class="expand-icon">▼</span></h3>
-                        <div class="project-type-badge badge-both">📄🔓 Publication + Open Source</div>
+                        <h3>PANDA.re</h3>
                     </div>
                     <div class="project-summary">Emulator designed for dynamic program analysis. PANDA.re provides a platform for whole-system dynamic analysis with deterministic record/replay, taint tracking, and a rich C/C++/Python plugin ecosystem.</div>
 
@@ -1036,7 +1025,11 @@
                         <span class="tech-tag">OS internals</span>
                         <span class="tech-tag">Plugin system</span>
                         <span class="tech-tag">Whole-system record/replay</span>
-                        <span class="tech-tag language">C, Python</span>
+                        <span class="tech-tag">QEMU</span>
+                        <span class="tech-tag">VMI</span>
+                        <span class="tech-tag">Multi-arch</span>
+                        <span class="lang-tag">C</span>
+                        <span class="lang-tag">Python</span>
                     </div>
 
                     <div class="project-content" style="display: none;">
@@ -1049,12 +1042,12 @@
                         <p><strong>Contribution note:</strong> I served as the maintainer of PANDA.re from 2020-2024, during which time I expanded the platform to support new guest architectures, new analysis capabilities, and upgraded to a modern CI/CD pipeline. I expanded core plugins including the Linux virtual machine introspection system (VMI) to support additional architectures. I developed and delivered a number of training courses on PANDA.re, and helped onboard new users to the platform while growing the open-source community around the project. PANDA.re is developed by a large team of contributors and this work would not have been possible without their significant efforts!</p>
 
                         <div class="project-subsection">
-                            <h4>Publications</h4>
-                            <ul>
-                                <li><strong>"PyPANDA: Taming the Pandamonium of Whole System Dynamic Analysis"</strong></li>
-                                <li>NDSS BAR 2021</li>
-                                <li>Luke Craig, <strong>Andrew Fasano</strong>, Tiemoko Ballo, Timothy Leek, Brendan Dolan-Gavitt, William Robertson</li>li>
-                            </ul>
+                            <h4>Publication</h4>
+                            <div class="publication">
+                                <div class="publication-title">"PyPANDA: Taming the Pandamonium of Whole System Dynamic Analysis"</div>
+                                <div class="publication-authors">Luke Craig, <strong>Andrew Fasano</strong>, Tiemoko Ballo, Timothy Leek, Brendan Dolan-Gavitt, William Robertson</div>
+                                <div class="publication-venue">NDSS BAR 2021</div>
+                            </div>
                         </div>
 
                         <div class="project-links">
@@ -1067,8 +1060,7 @@
 
                 <div class="project-section expandable" onclick="toggleProjectDetails(this)">
                     <div class="project-header">
-                        <h3>SoK: Firmware Rehosting <span class="expand-icon">▼</span></h3>
-                        <div class="project-type-badge badge-publication">📄 Publication</div>
+                        <h3>SoK: Firmware Rehosting</h3>
                     </div>
                     <div class="project-summary">Field-defining systematization that builds a taxonomy, terminology, and evaluation criteria for firmware rehosting research.</div>
 
@@ -1076,6 +1068,9 @@
                         <span class="tech-tag primary">Firmware Analysis</span>
                         <span class="tech-tag">Systematization</span>
                         <span class="tech-tag">Embedded Systems</span>
+                        <span class="tech-tag">IoT Security</span>
+                        <span class="tech-tag">Research Survey</span>
+                        <span class="tech-tag">Taxonomy</span>
                     </div>
 
                     <div class="project-content" style="display: none;">
@@ -1084,12 +1079,12 @@
                         <p><strong>Solution:</strong> In partnership with an international team of researchers, I led development of a systematization of knowledge (SoK) paper that defines the design space for firmware rehosting research. This work establishes common terminology, evaluation criteria, and a taxonomy that subsequent work (including PENGUIN) builds on.</p>
 
                         <div class="project-subsection">
-                            <h4>Publications</h4>
-                            <ul>
-                                <li><strong>SoK: Enabling Security Analyses of Embedded Systems via Rehosting</strong></li>
-                                <li>ASIACCS 2021</li>li>
-                                <li><strong>Andrew Fasano</strong>, Tiemoko Ballo, Marius Muench, Tim Leek, Alexander Bulekov, Brendan Dolan-Gavitt, Manuel Egele, Aurelien Francillon, Long Lu, Nick Gregory, Davide Balzarotti, William Robertson</li>
-                            </ul>
+                            <h4>Publication</h4>
+                            <div class="publication">
+                                <div class="publication-title">"SoK: Enabling Security Analyses of Embedded Systems via Rehosting"</div>
+                                <div class="publication-authors"><strong>Andrew Fasano</strong>, Tiemoko Ballo, Marius Muench, Tim Leek, Alexander Bulekov, Brendan Dolan-Gavitt, Manuel Egele, Aurelien Francillon, Long Lu, Nick Gregory, Davide Balzarotti, William Robertson</div>
+                                <div class="publication-venue">ASIACCS 2021</div>
+                            </div>
                         </div>
 
                         <div class="project-links">
@@ -1100,8 +1095,7 @@
 
                 <div class="project-section expandable" onclick="toggleProjectDetails(this)">
                     <div class="project-header">
-                        <h3>Homo in Machina <span class="expand-icon">▼</span></h3>
-                        <div class="project-type-badge badge-publication">📄 Publication</div>
+                        <h3>Homo in Machina</h3>
                     </div>
                     <div class="project-summary">Guides human-in-the-loop fuzzing with *compartment analysis*—a dominator-based, dynamic-signal-aware method to prioritize large, under-covered regions.</div>
 
@@ -1109,6 +1103,9 @@
                         <span class="tech-tag primary">Fuzzing</span>
                         <span class="tech-tag">Vulnerability Discovery</span>
                         <span class="tech-tag">Static Analysis</span>
+                        <span class="tech-tag">Control Flow</span>
+                        <span class="tech-tag">Human-in-the-loop</span>
+                        <span class="tech-tag">Code Coverage</span>
                     </div>
 
                     <div class="project-content" style="display: none;">
@@ -1118,11 +1115,11 @@
 
                         <div class="project-subsection">
                             <h4>Publication</h4>
-                            <ul>
-                                <li><strong>"Homo in Machina: Human Guidance for Fuzzing"</strong></li>
-                                <li>2023 IEEE Conference on Software Testing, Verification and Validation</li>
-                                <li>Josh Bundt, <strong>Andrew Fasano</strong>, Brendan Dolan-Gavitt, William Robertson, Timothy Leek</li>
-                            </ul>
+                            <div class="publication">
+                                <div class="publication-title">"Homo in Machina: Human Guidance for Fuzzing"</div>
+                                <div class="publication-authors">Josh Bundt, <strong>Andrew Fasano</strong>, Brendan Dolan-Gavitt, William Robertson, Timothy Leek</div>
+                                <div class="publication-venue">2023 IEEE Conference on Software Testing, Verification and Validation</div>
+                            </div>
                         </div>
 
                         <div class="project-links">
