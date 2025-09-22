@@ -463,6 +463,34 @@
             transition: all 0.2s ease;
         }
 
+        .project-section.filtered-out {
+            display: none;
+        }
+
+        .filter-info {
+            background: #e3f2fd;
+            border: 1px solid #90caf9;
+            border-radius: 3px;
+            padding: 0.75rem 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: #1976d2;
+        }
+
+        .clear-filter {
+            background: none;
+            border: none;
+            color: #1976d2;
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: 0.9rem;
+            margin-left: 0.5rem;
+        }
+
+        .clear-filter:hover {
+            color: #0d47a1;
+        }
+
         .project-section.expandable {
             cursor: pointer;
             position: relative;
@@ -587,6 +615,18 @@
             transition: all 0.2s ease;
             white-space: nowrap;
             flex-shrink: 0;
+            cursor: pointer;
+        }
+
+        .tech-tag:hover {
+            background: #e9ecef;
+            border-color: #adb5bd;
+        }
+
+        .tech-tag.active {
+            background: #1976d2;
+            color: white;
+            border-color: #1976d2;
         }
 
         .tech-tag.primary {
@@ -607,6 +647,18 @@
             transition: all 0.2s ease;
             white-space: nowrap;
             flex-shrink: 0;
+            cursor: pointer;
+        }
+
+        .lang-tag:hover {
+            background: #e1bee7;
+            border-color: #ab47bc;
+        }
+
+        .lang-tag.active {
+            background: #7b1fa2;
+            color: white;
+            border-color: #7b1fa2;
         }
 
         .project-links {
@@ -642,9 +694,9 @@
         }
 
         .show-more-btn {
-            background: #3498db;
-            color: white;
-            border: none;
+            background: #f8f9fa;
+            color: #495057;
+            border: 1px solid #dee2e6;
             padding: 0.8rem 2rem;
             border-radius: 2px;
             font-size: 0.9rem;
@@ -654,7 +706,8 @@
         }
 
         .show-more-btn:hover {
-            background: #2980b9;
+            background: #e9ecef;
+            border-color: #adb5bd;
             transform: translateY(-1px);
         }
 
@@ -790,6 +843,86 @@
             navbar.classList.remove('mobile-open');
         }
 
+        let activeFilter = null;
+
+        function filterByTag(tagText) {
+            // Clear previous filter
+            clearTagFilter();
+
+            activeFilter = tagText;
+            const projects = document.querySelectorAll('.project-section');
+            const filterInfo = document.getElementById('filter-info');
+            const activeFilterSpan = document.getElementById('active-filter');
+
+            let visibleCount = 0;
+
+            projects.forEach(project => {
+                const tags = project.querySelectorAll('.tech-tag, .lang-tag');
+                let hasTag = false;
+
+                tags.forEach(tag => {
+                    if (tag.textContent.trim() === tagText) {
+                        hasTag = true;
+                        tag.classList.add('active');
+                    }
+                });
+
+                if (hasTag) {
+                    project.classList.remove('filtered-out');
+                    visibleCount++;
+                } else {
+                    project.classList.add('filtered-out');
+                }
+            });
+
+            // Show filter info
+            activeFilterSpan.textContent = tagText;
+            filterInfo.style.display = 'block';
+
+            // Hide "Show More Projects" button when filtering
+            const showMoreContainer = document.querySelector('.show-more-container');
+            if (showMoreContainer) {
+                showMoreContainer.style.display = 'none';
+            }
+
+            // Show all projects when filtering (override hidden state)
+            const hiddenProjects = document.querySelector('.projects-hidden');
+            if (hiddenProjects) {
+                hiddenProjects.style.display = 'block';
+            }
+        }
+
+        function clearTagFilter() {
+            activeFilter = null;
+            const projects = document.querySelectorAll('.project-section');
+            const filterInfo = document.getElementById('filter-info');
+            const tags = document.querySelectorAll('.tech-tag, .lang-tag');
+
+            // Remove filtered-out class from all projects
+            projects.forEach(project => {
+                project.classList.remove('filtered-out');
+            });
+
+            // Remove active class from all tags
+            tags.forEach(tag => {
+                tag.classList.remove('active');
+            });
+
+            // Hide filter info
+            filterInfo.style.display = 'none';
+
+            // Restore "Show More Projects" functionality
+            const showMoreContainer = document.querySelector('.show-more-container');
+            const hiddenProjects = document.querySelector('.projects-hidden');
+            if (showMoreContainer && hiddenProjects) {
+                showMoreContainer.style.display = 'block';
+                // Restore original hidden state
+                if (!hiddenProjects.style.display || hiddenProjects.style.display === 'none') {
+                    hiddenProjects.style.display = 'none';
+                }
+            }
+        }
+
         document.addEventListener('DOMContentLoaded', function() {
             const navLinks = document.querySelectorAll('.navbar-nav a');
             navLinks.forEach(link => {
@@ -800,6 +933,21 @@
                 if (window.innerWidth > 768) {
                     closeMobileMenu();
                 }
+            });
+
+            // Add click handlers to all tags
+            const tags = document.querySelectorAll('.tech-tag, .lang-tag');
+            tags.forEach(tag => {
+                tag.addEventListener('click', function(e) {
+                    e.stopPropagation(); // Prevent project expansion
+                    const tagText = this.textContent.trim();
+
+                    if (activeFilter === tagText) {
+                        clearTagFilter();
+                    } else {
+                        filterByTag(tagText);
+                    }
+                });
             });
         });
     </script>
@@ -886,13 +1034,17 @@
             <h2>Select Projects and Publications</h2>
 
             <div class="projects-container">
+                <div id="filter-info" class="filter-info" style="display: none;">
+                    Showing projects with tag: <strong id="active-filter"></strong>
+                    <button class="clear-filter" onclick="clearTagFilter()">Clear filter</button>
+                </div>
                 <div class="project-section expandable" onclick="toggleProjectDetails(this)">
                     <div class="project-header">
                         <h3>PENGUIN</h3>
                     </div>
                     <div class="project-summary">Dynamically constructing analysis environments for firmware code on demand. PENGUIN's novel approach enables dynamic security testing of firmware at scale, without any specialized hardware.</div>
                     <div class="project-tech">
-                        <span class="tech-tag primary">Embedded Systems</span>
+                        <span class="tech-tag primary">Firmware/Embedded</span>
                         <span class="tech-tag">Dynamic Analysis</span>
                         <span class="tech-tag">CI/CD</span>
                         <span class="tech-tag">QEMU</span>
@@ -934,9 +1086,8 @@
 
                     <div class="project-tech">
                         <span class="tech-tag primary">Hypervisors</span>
-                        <span class="tech-tag">Kernel Programming</span>
-                        <span class="tech-tag">OS internals</span>
-                        <span class="tech-tag">QEMU/KVM</span>
+                        <span class="tech-tag">System Programming</span>
+                        <span class="tech-tag">QEMU</span>
                         <span class="tech-tag">System Calls</span>
                         <span class="tech-tag">Cloud Security</span>
                         <span class="lang-tag">C++</span>
@@ -975,8 +1126,8 @@
 
                     <div class="project-tech">
                         <span class="tech-tag primary">Cyber Evaluations</span>
-                        <span class="tech-tag">Dynamic Taint Analysis</span>
-                        <span class="tech-tag">Synthetic Data Generation</span>
+                        <span class="tech-tag">Dynamic Analysis</span>
+                        <span class="tech-tag">Synthetic Data</span>
                         <span class="tech-tag">LLVM</span>
                         <span class="tech-tag">Fuzzing</span>
                         <span class="tech-tag">HPC/Slurm</span>
@@ -1021,13 +1172,13 @@
                     <div class="project-summary">Emulator designed for dynamic program analysis. PANDA.re provides a platform for whole-system dynamic analysis with deterministic record/replay, taint tracking, and a rich C/C++/Python plugin ecosystem.</div>
 
                     <div class="project-tech">
-                        <span class="tech-tag primary">Emulator development</span>
-                        <span class="tech-tag">OS internals</span>
-                        <span class="tech-tag">Plugin system</span>
-                        <span class="tech-tag">Whole-system record/replay</span>
-                        <span class="tech-tag">QEMU</span>
+                        <span class="tech-tag primary">QEMU/Emulation</span>
+                        <span class="tech-tag">System Programming</span>
+                        <span class="tech-tag">Plugin System</span>
+                        <span class="tech-tag">Record/Replay</span>
                         <span class="tech-tag">VMI</span>
                         <span class="tech-tag">Multi-arch</span>
+                        <span class="tech-tag">QEMU</span>
                         <span class="lang-tag">C</span>
                         <span class="lang-tag">Python</span>
                     </div>
@@ -1065,11 +1216,10 @@
                     <div class="project-summary">Field-defining systematization that builds a taxonomy, terminology, and evaluation criteria for firmware rehosting research.</div>
 
                     <div class="project-tech">
-                        <span class="tech-tag primary">Firmware Analysis</span>
-                        <span class="tech-tag">Systematization</span>
-                        <span class="tech-tag">Embedded Systems</span>
-                        <span class="tech-tag">IoT Security</span>
+                        <span class="tech-tag primary">Firmware/Embedded</span>
                         <span class="tech-tag">Research Survey</span>
+                        <span class="tech-tag">IoT Security</span>
+                        <span class="tech-tag">Systematization</span>
                         <span class="tech-tag">Taxonomy</span>
                     </div>
 
@@ -1104,7 +1254,7 @@
                         <span class="tech-tag">Vulnerability Discovery</span>
                         <span class="tech-tag">Static Analysis</span>
                         <span class="tech-tag">Control Flow</span>
-                        <span class="tech-tag">Human-in-the-loop</span>
+                        <span class="tech-tag">Human-in-the-Loop</span>
                         <span class="tech-tag">Code Coverage</span>
                     </div>
 
