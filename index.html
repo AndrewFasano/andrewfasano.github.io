@@ -820,6 +820,147 @@
         .pub-links a {
             margin-right: 1rem;
         }
+
+        /* Talk Sections */
+        .talk-section {
+            border: 1px solid #e1e8ed;
+            border-radius: 2px;
+            padding: 1.5rem;
+            background: #fafbfc;
+            margin-bottom: 1.5rem;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .talk-section.expandable::before {
+            content: "Click to expand";
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: #f8f9fa;
+            color: #666;
+            border: 1px solid #e9ecef;
+            padding: 0.25rem 0.5rem;
+            border-radius: 2px;
+            font-size: 0.7rem;
+            font-weight: 500;
+            opacity: 0.8;
+            transition: all 0.2s ease;
+            z-index: 10;
+        }
+
+        .talk-section.expanded::before {
+            content: "Click to collapse";
+        }
+
+        .talk-section.expandable:hover {
+            border-color: #3498db;
+            box-shadow: 0 2px 8px rgba(52, 152, 219, 0.1);
+        }
+
+        .talk-section.expandable:hover::before {
+            opacity: 1;
+            background: #e9ecef;
+            color: #333;
+        }
+
+        .talk-section.expanded {
+            border-color: #3498db;
+            background: white;
+        }
+
+        .talk-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.5rem;
+            padding-right: 120px;
+        }
+
+        .talk-title {
+            font-weight: 600;
+            color: #2c3e50;
+            flex: 1;
+            margin-right: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .talk-date {
+            font-weight: 500;
+            color: #3498db;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+
+        .talk-venue {
+            font-weight: 500;
+            color: #3498db;
+            margin-bottom: 0.5rem;
+        }
+
+        .talk-summary {
+            color: #555;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .talk-abstract {
+            display: none;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .talk-section.expanded .talk-abstract {
+            display: block;
+        }
+
+        .talk-links {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e1e8ed;
+            font-size: 0.9rem;
+        }
+
+        .talk-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-right: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #007bff;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .talk-links a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+
+        .talk-links a i {
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .talk-header {
+                flex-direction: column;
+                align-items: flex-start;
+                padding-right: 100px;
+                gap: 0.3rem;
+            }
+
+            .talk-section.expandable::before {
+                top: 0.8rem;
+                right: 0.8rem;
+                font-size: 0.6rem;
+                padding: 0.2rem 0.4rem;
+            }
+        }
     </style>
     <script>
         function toggleProjectDetails(element) {
@@ -857,6 +998,10 @@
         }
 
         function togglePublication(element) {
+            element.classList.toggle('expanded');
+        }
+
+        function toggleTalkDetails(element) {
             element.classList.toggle('expanded');
         }
 
@@ -1035,7 +1180,7 @@
         <aside class="sidebar">
             <img src="images/af.jpg" alt="Andrew Fasano" class="profile-img">
             <h1>Dr Andrew Fasano</h1>
-            <div class="bio">United States Center for AI Standards and Innovation (CAISI)<br><small style="color: #888; font-size: 0.85em; font-style: normal;">Formerly the US AI Safety Institute</small></div>
+            <div class="bio">Center for AI Standards and Innovation (CAISI)<br><small style="color: #888; font-size: 0.85em; font-style: normal;">Formerly known as the US AI Safety Institute (AISI)</small></div>
             <div class="location"><i class="fas fa-map-marker-alt"></i> San Francisco, CA</div>
 
             <div class="social-links">
@@ -1221,6 +1366,7 @@
                             <a href="https://github.com/panda-re/lava" target="_blank"><i class="fab fa-github"></i> GitHub</a>
                             <a href="https://dl.acm.org/doi/pdf/10.1145/3433210.3453096" target="_blank"><i class="fas fa-file-pdf"></i> AsiaCCS '21 Paper</a>
                             <a href="https://messlab.moyix.net/papers/rode0day_spmag19.pdf" target="_blank"><i class="fas fa-file-pdf"></i>IEEE Magazine Article</a>
+                            <a href="https://dspace.mit.edu/bitstream/handle/1721.1/130137/2021-03-05-Bulletin%20Bug-Injecting%20System%20Helps%20to%20Advance%20the%20State-of-the-Art%20in%20Debugging%20Software.pdf?sequence=1&isAllowed=y" target="_blank"><i class="fas fa-file-pdf"></i> Additional Details</a>
                         </div>
                     </div>
                 </div>
@@ -1372,52 +1518,148 @@
             <span class="anchor" id="talks"></span>
             <h2><a href="#talks" style="color: inherit; text-decoration: none;">Invited Talks</a></h2>
 
-            <div class="news-item">
-                <div class="news-date">2025.08</div>
-                <div><strong>Redacted (US Government Conference)</strong>: AI Targets, AI Attackers: A case study on AI Agent Exploit Chains.</div>
+            <div class="talk-section expandable" onclick="toggleTalkDetails(this)">
+                <div class="talk-header">
+                    <div class="talk-title">AI Targets, AI Attackers: A Case Study on AI Agent Exploit Chains</div>
+                    <div class="talk-date">2025.08</div>
+                </div>
+                <div class="talk-venue">Redacted (US Government Conference)</div>
+                <div class="talk-summary">A case study examining sophisticated exploit chains that combine traditional software vulnerabilities with AI-specific attack vectors.</div>
+                <div class="talk-abstract">
+                    <p>Abstract not publicly available.</p>
+                </div>
             </div>
 
-            <div class="news-item">
-                <div class="news-date">2024.08</div>
-                <div><strong>DEFCON AIxCC</strong>: "A Reverse Engineer's Guide to Mechanistic Interpretability" <a href="https://vimeo.com/997479806" target="_blank">Video</a> and <a href="https://nation.state.actor/2024/08/21/defcon.html" target="_blank">slides</a>.</div>
+            <div class="talk-section expandable" onclick="toggleTalkDetails(this)">
+                <div class="talk-header">
+                    <div class="talk-title">A Reverse Engineer's Guide to Mechanistic Interpretability</div>
+                    <div class="talk-date">2024.08</div>
+                </div>
+                <div class="talk-venue">DEF CON AIxCC</div>
+                <div class="talk-summary">Introducing mechanistic interpretability to the reverse engineering community and exploring how traditional RE techniques apply to understanding neural networks.</div>
+
+                <div class="talk-abstract">
+                    <p>While the world buzzes about AI-augmented reverse engineering, what about turning the tables and reverse engineering AI itself? As artificial intelligence systems grow increasingly complex and pervasive, decoding their inner workings has become not just a fun challenge, but a critical necessity. This talk introduces the emerging field of mechanistic interpretability to the reverse engineering community, revealing how the frontier of AI research is reinventing wheels long familiar to RE experts.</p>
+
+                    <p>We'll explore how traditional reverse engineering techniques are finding new life in dissecting neural networks, and why the RE community's hard-earned wisdom is more relevant than ever in the age of AI. The presentation will demystify key concepts in mechanistic interpretability such as features, circuits, and superposition, mapping them onto familiar RE paradigms.</p>
+
+                    <p><strong>Attendees will gain insights into:</strong></p>
+                    <ul>
+                        <li>The parallels between reverse engineering software and decoding AI systems</li>
+                        <li>Current challenges in mechanistic interpretability</li>
+                        <li>The golden opportunities for reverse engineers to contribute to this critical field and potentially reshape the future of AI safety</li>
+                    </ul>
+
+                    <p>This talk aims to spark a cross-pollination between reverse engineering and AI research communities. Whether you're a seasoned reverse engineer itching for a new challenge, or an AI researcher seeking fresh perspectives, prepare to view artificial intelligence through a new lens.</p>
+                </div>
+
+                <div class="talk-links">
+                        <a href="https://vimeo.com/997479806" target="_blank"><i class="fas fa-video"></i> Video</a>
+                        <a href="https://nation.state.actor/2024/08/21/defcon.html" target="_blank"><i class="fas fa-file-powerpoint"></i> Slides</a>
+                </div>
             </div>
 
-            <div class="news-item">
-                <div class="news-date">2023.10</div>
-                <div><strong>New York University</strong>: "The Trials, Tribulations, and Triumphs of Whole System Dynamic Analysis: Lessons from a Decade in the Trenches"</div>
+            <div class="talk-section expandable" onclick="toggleTalkDetails(this)">
+                <div class="talk-header">
+                    <div class="talk-title">The Trials, Tribulations, and Triumphs of Whole System Dynamic Analysis</div>
+                    <div class="talk-date">2023.10</div>
+                </div>
+                <div class="talk-venue">New York University</div>
+                <div class="talk-summary">Lessons from a decade in the trenches developing and utilizing PANDA.re for dynamic program analysis across programs, operating systems, and embedded devices.</div>
+
+                <div class="talk-abstract">
+                    <p>Computer security professionals are always asking the age-old question, "What can this program do?" Often that question is asked using fancy static analysis tools and techniques to examine different paths through a program. But wouldn't it be easier to just run a program and see what it did? In an idealized CS 101 world, this would be straightforward, as programs would abide by our imagined abstraction layers.</p>
+
+                    <p>In reality, our computers are full of deceptions, from memory aliasing to speculative execution, concealing complexity from developers at every corner. This talk will dive into the deep end of dynamic program analysis (DPA), exploring the tumultuous landscape filled with both triumphs and pitfalls.</p>
+
+                    <p>Drawing on lessons learned from a decade of developing and utilizing PANDA.re, an open-source DPA platform, the presentation will demonstrate how DPA can be applied to individual programs, entire operating systems, and even embedded systems like wireless routers and IoT devices. Andrew will introduce existing analysis tools, demonstrate how approachable (or challenging) crafting your own analyses can be, and showcase real-world applications and missteps.</p>
+
+                    <p>Horror stories of failure will be paired with invaluable lessons we learned along the way. Andrew will conclude with a brief overview of his experience working on the research staff at MIT Lincoln Laboratory and opportunities for both careers and collaborations there.</p>
+                </div>
             </div>
 
-            <div class="news-item">
-                <div class="news-date">2019.10</div>
-                <div><strong>AvengerCon</strong>: "The LAVA has Hardened! Building a Better Bug Corpora to Evaluate Bug-Finders"</div>
+            <div class="talk-section expandable" onclick="toggleTalkDetails(this)">
+                <div class="talk-header">
+                    <div class="talk-title">The LAVA has Hardened! Building a Better Bug Corpora to Evaluate Bug-Finders</div>
+                    <div class="talk-date">2019.10</div>
+                </div>
+                <div class="talk-venue">AvengerCon</div>
+                <div class="talk-summary">Presenting advances in LAVA's automated vulnerability injection system for creating realistic bug datasets to evaluate security tools.</div>
+
+                <div class="talk-abstract">
+                    <p>How good is your cutting-edge fuzzer prototype? Can it compete against an elite team of reserve engineers? How about an advanced static analysis system? We released the LAVA-M corpus in 2016 in an attempt to quantify how many bugs these proven techniques fail to find. Since the initial corpus was released with four programs and thousands of synthetic bugs, we have seen huge improvements in bug-finding technology, and most modern tools can find nearly all the bugs in the corpus. To provide new corpora to evaluate modern bug-finding systems, we have open-sourced an improved, more challenging version of the bug-injection framework. With this new system, we launched Rode0day, an online, bug-finding competition where competitors have one month to identify as many bugs within a program as possible.</p>
+
+                    <p>This talk will focus on our LAVA bug-injection framework and how it can be used to generate buggy programs on-demand for a range of evaluation needs. Furthermore, we will discuss Rode0day and insights from the first year of competition.</p>
+                </div>
             </div>
 
-            <div class="news-item">
-                <div class="news-date">2019.08</div>
-                <div><strong>USENIX WOOT</strong>: "Rode0day: A Year of Bug-Finding Evaluations"</div>
+            <div class="talk-section expandable" onclick="toggleTalkDetails(this)">
+                <div class="talk-header">
+                    <div class="talk-title">Rode0day: A Year of Bug-Finding Evaluations</div>
+                    <div class="talk-date">2019.08</div>
+                </div>
+                <div class="talk-venue">USENIX WOOT</div>
+                <div class="talk-summary">Analysis of data from the first year of Rode0day competitions, examining what makes bugs hard to find and how to improve bug-finding tools.</div>
+
+                <div class="talk-abstract">
+                    <p>Why are some bugs so hard to find? Why are some bug-finding tools more effective than others? How can we improve bug-finding tools? In May 2018, we launched Rode0day, a monthly bug-finding competition designed to answer these questions.</p>
+
+                    <p>In our first year of competitions, we injected thousands of synthetic bugs into more than 50 programs, evaluated 35 bug-finders as they searched for bugs, and collected information on when teams found bugs as well as properties of the bugs themselves.</p>
+
+                    <p>In this talk we will present our analysis of this data and use it identify strengths and weaknesses of tools, discuss what properties of an injected bug make it easy or hard, and suggest ways of improving bug-finders.</p>
+                </div>
             </div>
 
-            <div class="news-item">
-                <div class="news-date">2018.08</div>
-                <div><strong>USENIX WOOT</strong>: "Rode0day: Searching for Truth with a Bug-Finding Competition"</div>
+            <div class="talk-section expandable" onclick="toggleTalkDetails(this)">
+                <div class="talk-header">
+                    <div class="talk-title">Rode0day: Searching for Truth with a Bug-Finding Competition</div>
+                    <div class="talk-date">2018.08</div>
+                </div>
+                <div class="talk-venue">USENIX WOOT</div>
+                <div class="talk-summary">Behind-the-scenes look at launching Rode0day, a continuous bug-finding competition using automated vulnerability injection.</div>
+
+                <div class="talk-abstract">
+                    <p>This summer, we launched Rode0day, a continuous bug-finding competition designed to improved understanding of bugs and bug-finding. Using automated vulnerability injection, we add hundreds of new bugs to programs every month and challenge competitors to find as many bugs as they can. Competitors are awarded points for generating inputs that trigger a new bug and cause the program to crash. At the end of each competition, we release an answer-key containing crashing inputs for each injected bug.</p>
+
+                    <p>We want Rode0day to help push the state-of-the-art in bug-finding forward by enabling analysis based on ground-truth. We hope that this competition provides a fair and concrete evaluation to study the relative strengths and weaknesses of bug-finding systems.</p>
+
+                    <p>In this talk, I'll provide a behind-the-scenes look at how we run these competition with a focus on challenge generation and then share some preliminary analyses of data from our first two competitions.</p>
+                </div>
+
+                <div class="talk-links">
+                    <a href="https://www.usenix.org/sites/default/files/conference/protected-files/woot18_slides_fasano.pdf" target="_blank"><i class="fas fa-file-powerpoint"></i> Slides</a>
+                </div>
             </div>
 
             <span class="anchor" id="awards"></span>
             <h2><a href="#awards" style="color: inherit; text-decoration: none;">Honors and Awards</a></h2>
 
-            <div class="news-item">
-                <div class="news-date">2020.09</div>
-                <div><strong>R&D100 Award</strong>: LAVA was <a href="https://www.rdworldonline.com/rd-100-2020-winner/lava-large-scale-vulnerability-addition/" target="_blank">awarded an R&D100 award</a> for its impact advancing the state of the art in vulnerability discovery.</div>
+            <div class="talk-section">
+                <div class="talk-header">
+                    <div class="talk-title">R&D100 Award</div>
+                    <div class="talk-date">2020.09</div>
+                </div>
+                <div class="talk-summary">LAVA was awarded an R&D100 award for its impact advancing the state of the art in vulnerability discovery and enabling rigorous, large-scale evaluation of automated security tools.</div>
+
+                <div class="talk-links">
+                    <a href="https://www.rdworldonline.com/rd-100-2020-winner/lava-large-scale-vulnerability-addition/" target="_blank"><i class="fas fa-award"></i> Award Details</a>
+                </div>
             </div>
 
-            <div class="news-item">
-                <div class="news-date">2019.09</div>
-                <div><strong>MIT Lincoln Scholar Award</strong>: Selected to receive special funding through a competitive process to pursue my research.</div>
+            <div class="talk-section">
+                <div class="talk-header">
+                    <div class="talk-title">MIT Lincoln Scholar Award</div>
+                    <div class="talk-date">2019.09</div>
+                </div>
+                <div class="talk-summary">Selected to receive special funding through a competitive process to pursue advanced research in cybersecurity and dynamic program analysis.</div>
             </div>
 
-            <div class="news-item">
-                <div class="news-date">2017.06</div>
-                <div><strong>MIT Lincoln Laboratory Team Award</strong>: Award for outstanding technical achievement.</div>
+            <div class="talk-section">
+                <div class="talk-header">
+                    <div class="talk-title">MIT Lincoln Laboratory Team Award</div>
+                    <div class="talk-date">2017.06</div>
+                </div>
+                <div class="talk-summary">Recognized for outstanding technical achievement in advancing cybersecurity research and tooling development.</div>
             </div>
 
             <div class="disclaimer">
