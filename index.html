@@ -290,8 +290,13 @@
             transition: width 0.3s ease;
         }
 
-        .navbar-nav a:hover::after {
+        .navbar-nav a:hover::after,
+        .navbar-nav a.active::after {
             width: 100%;
+        }
+
+        .navbar-nav a.active::after {
+            background: #007bff;
         }
 
         .mobile-menu-toggle {
@@ -1159,6 +1164,42 @@
             }
         }
 
+        function updateActiveNavLink() {
+            const navLinks = document.querySelectorAll('.navbar-nav a[href^="#"]');
+            const scrollPosition = window.scrollY + 150; // Account for navbar height + buffer
+
+            // Get all the main sections with their positions
+            const sections = [
+                { id: 'about-me', element: document.getElementById('about-me') },
+                { id: 'news', element: document.getElementById('news') },
+                { id: 'projects', element: document.getElementById('projects') },
+                { id: 'talks', element: document.getElementById('talks') },
+                { id: 'awards', element: document.getElementById('awards') }
+            ].filter(section => section.element); // Only keep existing sections
+
+            let currentSection = sections[0]?.id || 'about-me'; // Default to first section
+
+            // Find the section we're currently in (closest section above current scroll)
+            for (let i = sections.length - 1; i >= 0; i--) {
+                const section = sections[i];
+                const sectionTop = section.element.offsetTop;
+
+                if (scrollPosition >= sectionTop - 50) { // 50px buffer
+                    currentSection = section.id;
+                    break;
+                }
+            }
+
+            // Update active states
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                const href = link.getAttribute('href');
+                if (href === `#${currentSection}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
         document.addEventListener('DOMContentLoaded', function() {
             const navLinks = document.querySelectorAll('.navbar-nav a');
             navLinks.forEach(link => {
@@ -1170,6 +1211,18 @@
                     closeMobileMenu();
                 }
             });
+
+            // Add throttled scroll listener for active nav detection
+            let scrollTimer = null;
+            window.addEventListener('scroll', function() {
+                if (scrollTimer) {
+                    clearTimeout(scrollTimer);
+                }
+                scrollTimer = setTimeout(updateActiveNavLink, 10);
+            });
+
+            // Initial call to set active state
+            setTimeout(updateActiveNavLink, 100);
 
             // Add click handlers to all tags
             const tags = document.querySelectorAll('.tech-tag, .lang-tag');
