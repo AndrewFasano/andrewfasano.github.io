@@ -37,97 +37,55 @@
         }
 
         .sidebar {
-            background: #f8f9fa;
-            padding: 30px;
-            border-radius: 10px;
             height: fit-content;
             position: sticky;
             top: 100px;
+            text-align: center;
         }
 
         .profile-img {
-            width: 150px;
-            height: 150px;
+            width: 110px;
+            height: 110px;
             border-radius: 50%;
-            margin: 0 auto 20px;
+            margin: 0 auto 18px;
             display: block;
             object-fit: cover;
         }
 
         .sidebar h1 {
-            text-align: center;
-            margin-bottom: 10px;
-            font-size: 1.5em;
+            margin: 0 0 6px;
+            font-size: 1.25em;
             color: #2c3e50;
+            font-weight: 600;
+            border-bottom: none;
+            padding-bottom: 0;
         }
 
         .sidebar .bio {
-            text-align: center;
-            margin-bottom: 20px;
-            font-style: italic;
-            color: #666;
-        }
-
-        .sidebar .location {
-            text-align: center;
-            margin-bottom: 20px;
-            color: #666;
-        }
-
-        .social-links {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            margin-top: 20px;
-        }
-
-        .social-links a {
-            color: #333;
-            text-decoration: none;
-            transition: color 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 0.9em;
-        }
-
-        .social-links a i {
-            width: 20px;
-            text-align: center;
-            font-size: 1.1em;
-        }
-
-        .social-links a:hover {
-            color: #007bff;
-        }
-
-        .sidebar-section {
-            margin-top: 25px;
-            padding-top: 20px;
-            border-top: 1px solid #e0e0e0;
-        }
-
-        .sidebar-section h3 {
-            font-size: 1em;
-            margin-bottom: 10px;
             color: #2c3e50;
-            text-align: center;
+            font-size: 0.95em;
+            line-height: 1.45;
+            margin-bottom: 14px;
         }
 
-        .sidebar-highlight {
-            background: #fff;
-            padding: 12px;
-            border-radius: 6px;
-            margin-bottom: 10px;
-            border-left: 3px solid #007bff;
+        .sidebar .meta {
+            color: #888;
             font-size: 0.85em;
-            line-height: 1.4;
+            line-height: 1.6;
+            margin-bottom: 8px;
         }
 
-        .sidebar-highlight strong {
-            color: #2c3e50;
-            display: block;
-            margin-bottom: 4px;
+        .sidebar .meta:last-child {
+            margin-bottom: 0;
+        }
+
+        .sidebar .meta a {
+            color: #555;
+            text-decoration: none;
+        }
+
+        .sidebar .meta a:hover {
+            text-decoration: underline;
         }
 
         .main-content {
@@ -159,7 +117,13 @@
 
         p {
             margin-bottom: 15px;
-            text-align: justify;
+        }
+
+        .lede {
+            font-size: 1.15em;
+            line-height: 1.55;
+            color: #2c3e50;
+            margin: 0 0 28px;
         }
 
         a {
@@ -415,10 +379,6 @@
                 padding: 10px;
             }
 
-            .sidebar {
-                padding: 15px;
-            }
-
             .main-content {
                 padding: 0 5px;
             }
@@ -463,9 +423,8 @@
                 font-size: 1.5rem;
             }
 
-            .profile-img {
-                width: 120px;
-                height: 120px;
+            .lede {
+                font-size: 1.05em;
             }
         }
 
@@ -1171,10 +1130,9 @@
             // Get all the main sections with their positions
             const sections = [
                 { id: 'about-me', element: document.getElementById('about-me') },
-                { id: 'news', element: document.getElementById('news') },
+                { id: 'recently', element: document.getElementById('recently') },
                 { id: 'projects', element: document.getElementById('projects') },
-                { id: 'talks', element: document.getElementById('talks') },
-                { id: 'awards', element: document.getElementById('awards') }
+                { id: 'talks', element: document.getElementById('talks') }
             ].filter(section => section.element); // Only keep existing sections
 
             let currentSection = sections[0]?.id || 'about-me'; // Default to first section
@@ -1248,16 +1206,15 @@
 <body>
     <nav class="navbar">
         <div class="navbar-content">
-            <a href="#" class="navbar-brand">Dr Andrew Fasano</a>
+            <a href="#" class="navbar-brand">Andrew Fasano</a>
             <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
                 <i class="fas fa-bars"></i>
             </button>
             <ul class="navbar-nav" id="navbar-nav">
                 <li><a href="#about-me" onclick="closeMobileMenu()">About</a></li>
-                <li><a href="#news" onclick="closeMobileMenu()">News</a></li>
+                <li><a href="#recently" onclick="closeMobileMenu()">Recently</a></li>
                 <li><a href="#projects" onclick="closeMobileMenu()">Projects</a></li>
                 <li><a href="#talks" onclick="closeMobileMenu()">Talks</a></li>
-                <li><a href="#awards" onclick="closeMobileMenu()">Awards</a></li>
                 <li><a href="https://nation.state.actor" target="_blank" onclick="closeMobileMenu()">Security Blog</a></li>
             </ul>
         </div>
@@ -1266,66 +1223,47 @@
     <div class="container">
         <aside class="sidebar">
             <img src="images/af.jpg" alt="Andrew Fasano" class="profile-img">
-            <h1>Dr Andrew Fasano</h1>
-            <div class="bio">Center for AI Standards and Innovation (CAISI)<br><small style="color: #888; font-size: 0.85em; font-style: normal;">Formerly known as the US AI Safety Institute (AISI)</small></div>
-            <div class="location"><i class="fas fa-map-marker-alt"></i> San Francisco, CA</div>
-
-            <div class="social-links">
-                <a href="mailto:andrew@andrewfasano.com"><i class="fas fa-envelope"></i> andrew@andrewfasano.com</a>
-                <a href="https://scholar.google.com/citations?user=Y9XVfSIAAAAJ" target="_blank"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
-                <a href="https://linkedin.com/in/fasano" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                <a href="https://github.com/andrewfasano" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                <a href="https://orcid.org/0000-0003-3149-9425" target="_blank"><i class="fab fa-orcid"></i> ORCID</a>
+            <h1>Andrew Fasano</h1>
+            <div class="bio">Cyber Lead<br>NIST's Center for AI Standards and Innovation (CAISI)</div>
+            <div class="meta">San Francisco, CA</div>
+            <div class="meta">PhD Northeastern &middot; BS RPI</div>
+            <div class="meta">andrew@andrewfasano.com</div>
+            <div class="meta">
+                <a href="https://scholar.google.com/citations?user=Y9XVfSIAAAAJ" target="_blank">Scholar</a> &middot;
+                <a href="https://linkedin.com/in/fasano" target="_blank">LinkedIn</a> &middot;
+                <a href="https://github.com/andrewfasano" target="_blank">GitHub</a>
             </div>
-
         </aside>
 
         <main class="main-content">
             <span class="anchor" id="about-me"></span>
 
-            <p>As a senior cybersecurity researcher at NIST's <a href="https://www.nist.gov/caisi" target="_blank">Center for AI Standards and Innovation</a> (CAISI), I lead a research team tracking the cyber offense capabilities of AI systems through pre- and post-deployment model evaluations. I also support a team attacking AI systems to discover how these systems could be exploited by nefarious actors. Through close partnerships with leading AI labs and other U.S. government agencies, my work advances our understanding of AI's national security implications and strengthens the resilience of this critical technology.</p>
+            <p class="lede">Hi, I'm Andrew Fasano &mdash; a senior cyber researcher leading the cyber workstream at NIST's <a href="https://www.nist.gov/caisi" target="_blank">Center for AI Standards and Innovation</a> (CAISI), where I assess the hacking capabilities of frontier AI models.</p>
 
-            <p>Previously, I spent a decade at MIT Lincoln Laboratory in the <a href="https://www.ll.mit.edu/r-d/cyber-security-and-information-sciences/cyber-system-assessments" target="_blank">Cyber System Assessments Group</a>, where I led a research team at the intersection of dynamic program analysis, firmware security, and vulnerability discovery. In that role, I helped define the field of <em>firmware rehosting</em>, developed open-source tools, and applied them to evaluate the security of critical systems. Along the way, I developed award-winning tools and techniques for evaluating vulnerability discovery tools, reverse engineering, and software exploitation. My background in systems security and cyber assessments now shapes how I approach AI.</p>
+            <p>In practice, my research is less about running benchmarks and more about figuring out what to measure in the first place, and what the results actually mean. That can mean designing new benchmarks grounded in realistic threat models, or spending weeks with a single model deployed as a coding agent, pushing past automated scores to find real vulnerabilities and to build working exploits. The other half of my time is spent briefing these findings to senior USG stakeholders, including the White House &mdash; and convening the <a href="https://www.nist.gov/news-events/news/2024/11/us-ai-safety-institute-establishes-new-us-government-taskforce-collaborate" target="_blank">TRAINS</a> interagency taskforce I lead to debate them with experts across government.</p>
 
-            <p>I earned my PhD in Computer Science from Northeastern University and BS from Rensselaer Polytechnic Institute, where I was an active member of <a href="https://rpis.ec" target="_blank">RPISEC</a> and its cyber capture the flag (CTF) team. I'm also passionate about cybersecurity education, having developed courses for universities, government agencies, and private companies. The materials from my <em>System Security with Dynamic Program Analysis</em> course are <a href="https://github.com/andrewFasano/dpa" target="_blank">publicly available</a>.</p>
+            <p>This work builds on a decade I spent at MIT Lincoln Laboratory's <a href="https://www.ll.mit.edu/r-d/cyber-security-and-information-sciences/cyber-system-assessments" target="_blank">Cyber System Assessments Group</a>, where I worked on vulnerability discovery, firmware rehosting, and dynamic program analysis &mdash; and built systems for rigorously evaluating the tools that do this kind of work. I led MIT-LL's <a href="https://news.mit.edu/2017/mit-team-lincoln-laboratory-scores-big-at-def-con-hacking-competition-0918" target="_blank">Lab RATs</a> to a top-10 finish at DEF CON CTF finals. My roots in the cyber community go back to <a href="https://rpis.ec" target="_blank">RPISEC</a> at RPI.</p>
 
-            <span class="anchor" id="news"></span>
-            <h2><a href="#news" style="color: inherit; text-decoration: none;">News</a></h2>
+            <span class="anchor" id="recently"></span>
+            <h2><a href="#recently" style="color: inherit; text-decoration: none;">Recently</a></h2>
 
             <div class="news-item">
-                <div class="news-date">2025.09</div>
-                <div>OpenAI released a blog post describing my discovery of a "<a href="https://openai.com/index/us-caisi-uk-aisi-ai-update#:~:text=sophisticated%20exploit%20chain%20combining%20traditional%20software%20vulnerabilities%20with%20AI%20vulnerabilities" target="_blank">sophisticated exploit chain combining traditional software vulnerabilities with AI vulnerabilities</a>" in ChatGPT Agent.</div>
+                <div class="news-date">2026.02</div>
+                <div>Found and disclosed vulnerabilities in the <a href="https://github.com/torvalds/linux/commit/f41c5d151078c5348271ffaf8e7410d96f2d82f8" target="_blank">Linux kernel</a>, <a href="https://www.openwall.com/lists/oss-security/2025/12/18/3" target="_blank">Exim</a>, and <a href="https://www.kb.cert.org/vuls/id/458022" target="_blank">Open5GS</a>.</div>
             </div>
 
             <div class="news-item">
-                <div class="news-date">2024.11</div>
-                <div>Joined NIST's <a href="https://nist.gov/caisi" target="_blank">Center for AI Standards and Innovation</a> to lead research on AI cyber capabilities in collaboration with frontier AI labs.</div>
+                <div class="news-date">2025.09</div>
+                <div>OpenAI publicly described my finding in ChatGPT Agent as a "<a href="https://openai.com/index/us-caisi-uk-aisi-ai-update#:~:text=sophisticated%20exploit%20chain%20combining%20traditional%20software%20vulnerabilities%20with%20AI%20vulnerabilities" target="_blank">sophisticated exploit chain combining traditional software vulnerabilities with AI vulnerabilities</a>."</div>
             </div>
 
             <div class="news-item">
                 <div class="news-date">2024.08</div>
-                <div>Presented "<a href="https://vimeo.com/997479806" target="_blank">A Reverse Engineer's Guide to Mechanistic Interpretability</a>" at DEF CON, describing how we can understand the internals of Large Language Models and how it differs from software reverse engineering.</div>
-            </div>
-
-            <div class="news-item">
-                <div class="news-date">2020.09</div>
-                <div>LAVA awarded <a href="https://www.rdworldonline.com/rd-100-2020-winner/lava-large-scale-vulnerability-addition/" target="_blank">R&D100 Award</a> for enabling rigorous, large-scale, and repeatable evaluation of automated vulnerability discovery tools.</div>
-            </div>
-
-            <div class="news-item">
-                <div class="news-date">2017.07</div>
-                <div>Led Lab RATs team to a 10th place finish at DEF CON CTF finals, as covered by the <a href="https://news.mit.edu/2017/mit-team-lincoln-laboratory-scores-big-at-def-con-hacking-competition-0918" target="_blank">MIT News</a>.</div>
-            </div>
-
-            <div class="news-item">
-                <div class="news-date">2016.12</div>
-                <div>Discovered <a href="https://nation.state.actor/2016/12/05/mcafee.html" target="_blank">10 CVEs</a> in a McAfee antivirus product, 
-                    as covered by <a href="https://www.theregister.com/2016/12/13/boffin_dishes_10_mcafee_enterprise_bugs_for_chained_rce_root_death/" target="_blank">The Register</a> and <a href="https://www.zdnet.com/article/security-flaw-in-mcafee-enterprise-software-gives-attackers-root-access/" target="_blank">ZDNet</a>.
-                </div>
+                <div>Presented "<a href="https://vimeo.com/997479806" target="_blank">A Reverse Engineer's Guide to Mechanistic Interpretability</a>" at DEF CON, on understanding the internals of large language models.</div>
             </div>
 
             <span class="anchor" id="projects"></span>
-            <h2><a href="#projects" style="color: inherit; text-decoration: none;">Select Projects and Publications</a></h2>
+            <h2><a href="#projects" style="color: inherit; text-decoration: none;">Projects</a></h2>
 
             <div class="projects-container">
                 <div id="filter-info" class="filter-info" style="display: none;">
@@ -1598,7 +1536,7 @@
 
 
             <span class="anchor" id="talks"></span>
-            <h2><a href="#talks" style="color: inherit; text-decoration: none;">Invited Talks</a></h2>
+            <h2><a href="#talks" style="color: inherit; text-decoration: none;">Talks</a></h2>
 
             <div class="talk-section expandable" onclick="toggleTalkDetails(this)">
                 <div class="talk-header">
@@ -1714,7 +1652,7 @@
             </div>
 
             <span class="anchor" id="awards"></span>
-            <h2><a href="#awards" style="color: inherit; text-decoration: none;">Honors and Awards</a></h2>
+            <h2><a href="#awards" style="color: inherit; text-decoration: none;">Awards</a></h2>
 
             <div class="award-section">
                 <div class="talk-header">
@@ -1746,7 +1684,7 @@
 
             <div class="disclaimer">
                 <h3>Disclaimer</h3>
-                <p>This is a personal website. The views expressed here are my own and do not necessarily represent the views of my employer or any other organization.</p>
+                <p>This is a personal website. The views expressed here are my own and do not represent the views of my employer or any other organization.</p>
             </div>
         </main>
     </div>
